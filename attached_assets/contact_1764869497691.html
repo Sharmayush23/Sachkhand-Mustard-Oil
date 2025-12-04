@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact MEFA NEEDLES - Get in touch for inquiries, quotes, and support.">
+    <title>Contact Us | MEFA NEEDLES</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MEFA NEEDLES</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-bg"></div>
+        <div class="container hero-content text-center">
+            <h1 data-aos="fade-up">Get in Touch</h1>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Have questions about our products or services? Our team is here to help.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container">
+        <div class="grid grid-cols-2">
+            <!-- Contact Form -->
+            <div class="card" data-aos="fade-right">
+                <h2 class="mb-8">Send us a Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name" class="form-label">NAME</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">EMAIL</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">SUBJECT</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">MESSAGE</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full-width">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="card" style="background: var(--color-dark); color: var(--color-white);" data-aos="fade-left">
+                <h2 class="mb-8" style="color: var(--color-white);">Contact Information</h2>
+                <div class="mb-8">
+                    <h4 style="color: var(--color-secondary);">Email</h4>
+                    <p style="color: var(--color-gray-300);">info@mefaneedles.com<br>sales@mefaneedles.com</p>
+                </div>
+                <div class="mb-8">
+                    <h4 style="color: var(--color-secondary);">Phone</h4>
+                    <p style="color: var(--color-gray-300);">+91-9115550799<br>+91-9115550739</p>
+                </div>
+                <div class="mb-8">
+                    <h4 style="color: var(--color-secondary);">Address</h4>
+                    <p style="color: var(--color-gray-300);">
+                        B-XXI – 14531, G.T. Road<br>
+                        Ludhiana - 141003 (PB.)<br>
+                        Punjab, India
+                    </p>
+                </div>
+
+                <div style="margin-top: 4rem;">
+                    <h4 style="color: var(--color-secondary); margin-bottom: 1rem;">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" style="color: var(--color-white);">LinkedIn</a>
+                        <a href="#" style="color: var(--color-white);">Facebook</a>
+                        <a href="#" style="color: var(--color-white);">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="logo" style="color: white; margin-bottom: 1rem;">MEFA NEEDLES</div>
+                <p>Building the future of knitting since 1968.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:sales@mefaneedles.com">sales@mefaneedles.com</a></li>
+                    <li>+91-9115550799</li>
+                    <li>Ludhiana, Punjab, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MEFA NEEDLES Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

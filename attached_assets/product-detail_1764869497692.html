@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - MEFA Needles</title>
+    <meta name="description"
+        content="Explore our premium quality textile needles with detailed specifications and features.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E12531;
+            --primary-dark: #B91C26;
+            --secondary: #F6A942;
+            --dark: #1A1A1A;
+            --gray: #6B7280;
+            --light: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--light);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        /* Product Section */
+        .product-section {
+            max-width: 1280px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Gallery */
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .main-image-container {
+            position: relative;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-image {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
+
+        .zoom-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .thumbnail {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 1rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        /* Specifications */
+        .specs-section {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .specs-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .specs-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .spec-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .spec-value {
+            color: var(--gray);
+        }
+
+        /* Features */
+        .features-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .feature-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-content p {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(225, 37, 49, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 37, 49, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Related Products */
+        .related-section {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .related-image {
+            height: 200px;
+            background: linear-gradient(135deg, #E5E7EB 0%, #F3F4F6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .related-image img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-content h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .related-content p {
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-gallery {
+                position: static;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="landing.html" class="logo">MEFA NEEDLES</a>
+            <ul class="nav-links">
+                <li><a href="landing.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="timeline.html">Our History</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="landing.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="products.html">Products</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Circular Knitting Needles</span>
+    </div>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="product-container">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <img src="assets/product1.jpg" alt="Circular Knitting Needle" class="main-image" id="mainImage">
+                    <div class="zoom-badge">
+                        <i class="fas fa-search-plus"></i>
+                        Click to zoom
+                    </div>
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail active" onclick="changeImage('assets/product1.jpg', this)">
+                        <img src="assets/product1.jpg" alt="View 1">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage('assets/product1.jpg', this)">
+                        <img src="assets/product1.jpg" alt="View 2">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage('assets/product1.jpg', this)">
+                        <img src="assets/product1.jpg" alt="View 3">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage('assets/product1.jpg', this)">
+                        <img src="assets/product1.jpg" alt="View 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <div>
+                    <span class="product-badge">Premium Quality</span>
+                    <h1 class="product-title">Circular Knitting Needles</h1>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span style="color: var(--gray); margin-left: 0.5rem;">(4.9/5 from 150+ reviews)</span>
+                    </div>
+                </div>
+
+                <p class="product-description">
+                    High-precision circular knitting needles designed for high-speed circular knitting machines.
+                    Manufactured with premium high carbon steel and finished with chrome or titanium coating for
+                    superior performance and extended service life. Ensures uniform loop formation across all yarn types
+                    and knitting structures.
+                </p>
+
+                <!-- Specifications -->
+                <div class="specs-section">
+                    <h3>Technical Specifications</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Material</span>
+                            <span class="spec-value">High Carbon Steel</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Coating</span>
+                            <span class="spec-value">Chrome / Titanium</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Gauge Range</span>
+                            <span class="spec-value">12G - 40G</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Application</span>
+                            <span class="spec-value">Single/Double Jersey</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Machine Type</span>
+                            <span class="spec-value">Circular Knitting</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Certification</span>
+                            <span class="spec-value">ISO 9001:2015</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Key Features</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Superior Durability</h4>
+                                <p>Extended service life with minimal wear and tear</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Precision Engineering</h4>
+                                <p>Consistent loop formation for high-quality fabric</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>High-Speed Compatible</h4>
+                                <p>Optimized for modern high-speed knitting machines</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Request Quote
+                    </a>
+                    <a href="tel:+919115550799" class="btn btn-outline">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div
+                    style="padding: 1.5rem; background: var(--light); border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                        Need Help Choosing?
+                    </h4>
+                    <p style="color: var(--gray); margin: 0;">
+                        Our technical team is available 24/7 to help you select the right needles for your specific
+                        requirements. Contact us for personalized recommendations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-section">
+        <div class="section-header">
+            <h2>Related Products</h2>
+            <p style="color: var(--gray);">Explore our complete range of premium quality needles</p>
+        </div>
+        <div class="related-grid">
+            <div class="related-card">
+                <div class="related-image">
+                    <img src="assets/product1.jpg" alt="Hosiery Needles">
+                </div>
+                <div class="related-content">
+                    <h4>Hosiery Needles</h4>
+                    <p>Specialized needles for hosiery manufacturing with superior finish</p>
+                    <a href="product-detail.html?type=hosiery" class="btn btn-outline"
+                        style="width: 100%; justify-content: center;">View Details</a>
+                </div>
+            </div>
+            <div class="related-card">
+                <div class="related-image">
+                    <img src="assets/product1.jpg" alt="Flat Knitting Needles">
+                </div>
+                <div class="related-content">
+                    <h4>Flat Knitting Needles</h4>
+                    <p>Robust needles engineered for demanding industrial applications</p>
+                    <a href="product-detail.html?type=flat" class="btn btn-outline"
+                        style="width: 100%; justify-content: center;">View Details</a>
+                </div>
+            </div>
+            <div class="related-card">
+                <div class="related-image">
+                    <img src="assets/product1.jpg" alt="Transfer Needles">
+                </div>
+                <div class="related-content">
+                    <h4>Transfer Needles</h4>
+                    <p>High-precision transfer needles for complex knitting patterns</p>
+                    <a href="product-detail.html?type=transfer" class="btn btn-outline"
+                        style="width: 100%; justify-content: center;">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function changeImage(src, element) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Image zoom on click
+        document.getElementById('mainImage').addEventListener('click', function () {
+            this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+            this.style.cursor = this.style.transform === 'scale(1.5)' ? 'zoom-out' : 'zoom-in';
+        });
+    </script>
+</body>
+
+</html>

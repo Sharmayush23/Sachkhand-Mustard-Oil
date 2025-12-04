@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - MEFA Needles</title>
+    <meta name="description"
+        content="Browse our complete range of premium quality textile needles including circular, flat, hosiery, and transfer needles.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E12531;
+            --primary-dark: #B91C26;
+            --secondary: #F6A942;
+            --dark: #1A1A1A;
+            --gray: #6B7280;
+            --light: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--light);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--dark) 0%, #2D2D2D 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            max-width: 1280px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .filter-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .filter-btn {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1280px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-category {
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-tag {
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--dark);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(225, 37, 49, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 37, 49, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .filter-container {
+                flex-direction: column;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="landing.html" class="logo">
+                <img src="assets/logo.webp" alt="MEFA Needles">
+            </a>
+            <ul class="nav-links">
+                <li><a href="landing.html">Home</a></li>
+                <li><a href="products-listing.html">Products</a></li>
+                <li><a href="timeline.html">Our History</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Premium Products</h1>
+        <p>Discover our comprehensive range of high-performance needles engineered for excellence in textile
+            manufacturing</p>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="all">All Products</option>
+                    <option value="circular">Circular Knitting</option>
+                    <option value="hosiery">Hosiery</option>
+                    <option value="flat">Flat Knitting</option>
+                    <option value="transfer">Transfer Needles</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="gauge">Gauge Range</label>
+                <select id="gauge">
+                    <option value="all">All Gauges</option>
+                    <option value="12-20">12G - 20G</option>
+                    <option value="21-30">21G - 30G</option>
+                    <option value="31-40">31G - 40G</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="search">Search</label>
+                <input type="text" id="search" placeholder="Search products...">
+            </div>
+            <button class="filter-btn" onclick="filterProducts()">Apply Filters</button>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="products-grid" id="productsGrid">
+            <!-- Circular Knitting Needles -->
+            <div class="product-card" data-category="circular" data-gauge="12-40">
+                <div class="product-image">
+                    <img src="assets/circular-needle.png" alt="Circular Knitting Needles">
+                    <span class="product-badge">Best Seller</span>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">Circular Knitting</div>
+                    <h3>Circular Knitting Needles</h3>
+                    <p>High-precision needles designed for high-speed circular knitting machines. Ensures uniform loop
+                        formation and extended service life.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">12G - 40G</span>
+                        <span class="feature-tag">Chrome/Titanium</span>
+                        <span class="feature-tag">High Carbon Steel</span>
+                    </div>
+                    <a href="product-detail.html?type=circular" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Hosiery Needles -->
+            <div class="product-card" data-category="hosiery" data-gauge="all">
+                <div class="product-image">
+                    <img src="assets/hosiery-needle.png" alt="Hosiery Needles">
+                    <span class="product-badge">Premium Quality</span>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">Hosiery</div>
+                    <h3>Hosiery Needles</h3>
+                    <p>Specialized needles for hosiery manufacturing with superior finish and consistent performance
+                        across all yarn types.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">All Gauges</span>
+                        <span class="feature-tag">Precision Finish</span>
+                        <span class="feature-tag">Long Lasting</span>
+                    </div>
+                    <a href="product-detail.html?type=hosiery" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Flat Knitting Needles -->
+            <div class="product-card" data-category="flat" data-gauge="all">
+                <div class="product-image">
+                    <img src="assets/flat-needle.png" alt="Flat Knitting Needles">
+                    <span class="product-badge">Industrial Grade</span>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">Flat Knitting</div>
+                    <h3>Flat Knitting Needles</h3>
+                    <p>Robust flat knitting needles engineered for demanding industrial applications with exceptional
+                        durability.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">Hand-Flat</span>
+                        <span class="feature-tag">Power-Flat</span>
+                        <span class="feature-tag">Heavy Duty</span>
+                    </div>
+                    <a href="product-detail.html?type=flat" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Transfer Needles -->
+            <div class="product-card" data-category="transfer" data-gauge="all">
+                <div class="product-image">
+                    <img src="assets/transfer-needle.png" alt="Transfer Needles">
+                    <span class="product-badge">Precision</span>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">Transfer</div>
+                    <h3>Transfer Needles</h3>
+                    <p>High-precision transfer needles for complex knitting patterns and specialized textile
+                        applications.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">High Precision</span>
+                        <span class="feature-tag">Versatile</span>
+                        <span class="feature-tag">Durable</span>
+                    </div>
+                    <a href="product-detail.html?type=transfer" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Sinker Needles -->
+            <div class="product-card" data-category="circular" data-gauge="12-30">
+                <div class="product-image">
+                    <img src="assets/product1.jpg" alt="Sinker Needles">
+                </div>
+                <div class="product-content">
+                    <div class="product-category">Circular Knitting</div>
+                    <h3>Sinker Needles</h3>
+                    <p>Specialized sinker needles for circular knitting machines, ensuring smooth fabric formation and
+                        consistent quality.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">12G - 30G</span>
+                        <span class="feature-tag">Precision Ground</span>
+                        <span class="feature-tag">Heat Treated</span>
+                    </div>
+                    <a href="product-detail.html?type=sinker" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+
+            <!-- Jack Needles -->
+            <div class="product-card" data-category="flat" data-gauge="all">
+                <div class="product-image">
+                    <img src="assets/product1.jpg" alt="Jack Needles">
+                </div>
+                <div class="product-content">
+                    <div class="product-category">Flat Knitting</div>
+                    <h3>Jack Needles</h3>
+                    <p>High-quality jack needles for flat knitting machines, designed for reliability and long service
+                        life.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">All Gauges</span>
+                        <span class="feature-tag">Hardened Steel</span>
+                        <span class="feature-tag">Precision Fit</span>
+                    </div>
+                    <a href="product-detail.html?type=jack" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About MEFA</h4>
+                <p>India's largest needle manufacturing group, delivering premium quality textile needles since 1968.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="landing.html">Home</a></li>
+                    <li><a href="products-listing.html">Products</a></li>
+                    <li><a href="timeline.html">Our History</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul class="footer-links">
+                    <li><a href="product-detail.html?type=circular">Circular Knitting Needles</a></li>
+                    <li><a href="product-detail.html?type=hosiery">Hosiery Needles</a></li>
+                    <li><a href="product-detail.html?type=flat">Flat Knitting Needles</a></li>
+                    <li><a href="product-detail.html?type=transfer">Transfer Needles</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> info@mefaneedles.com</li>
+                    <li><i class="fas fa-phone"></i> +91 9115550799</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ludhiana, Punjab, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MEFA Needles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function filterProducts() {
+            const category = document.getElementById('category').value;
+            const gauge = document.getElementById('gauge').value;
+            const search = document.getElementById('search').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardGauge = card.getAttribute('data-gauge');
+                const cardText = card.textContent.toLowerCase();
+
+                let showCard = true;
+
+                // Category filter
+                if (category !== 'all' && cardCategory !== category) {
+                    showCard = false;
+                }
+
+                // Search filter
+                if (search && !cardText.includes(search)) {
+                    showCard = false;
+                }
+
+                card.style.display = showCard ? 'block' : 'none';
+            });
+        }
+
+        // Enable search on Enter key
+        document.getElementById('search').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                filterProducts();
+            }
+        });
+    </script>
+</body>
+
+</html>
