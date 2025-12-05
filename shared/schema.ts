@@ -13,6 +13,7 @@ export const products = pgTable("products", {
   coating: text("coating"),
   application: text("application"),
   badge: text("badge"),
+  image: text("image"),
 });
 
 export const timelineEvents = pgTable("timeline_events", {

@@ -50,10 +50,10 @@ export default function ProductsPage() {
   const [selectedGauge, setSelectedGauge] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const apiUrl = selectedCategory === "all" 
-    ? "/api/products" 
+  const apiUrl = selectedCategory === "all"
+    ? "/api/products"
     : `/api/products?category=${selectedCategory}`;
-    
+
   const { data: products = [], isLoading, error } = useQuery<Product[]>({
     queryKey: ["/api/products", { category: selectedCategory }],
     queryFn: async () => {
@@ -73,15 +73,15 @@ export default function ProductsPage() {
 
   const checkGaugeOverlap = (productGauge: string | undefined, filterGauge: string): boolean => {
     if (!productGauge || filterGauge === "all") return true;
-    
+
     const productRange = parseGaugeRange(productGauge);
     const filterRange = parseGaugeRange(filterGauge);
-    
+
     if (!productRange || !filterRange) return true;
-    
+
     const [productMin, productMax] = productRange;
     const [filterMin, filterMax] = filterRange;
-    
+
     return productMin <= filterMax && productMax >= filterMin;
   };
 
@@ -89,9 +89,9 @@ export default function ProductsPage() {
     const matchesSearch =
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     const matchesGauge = checkGaugeOverlap(product.gaugeRange, selectedGauge);
-    
+
     return matchesSearch && matchesGauge;
   });
 
@@ -205,62 +205,72 @@ export default function ProductsPage() {
             >
               {filteredProducts.map((product) => (
                 <motion.div key={product.id} variants={fadeInUp}>
-                  <Card
-                    className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md overflow-hidden"
-                    data-testid={`card-product-${product.id}`}
-                  >
-                    <CardContent className="p-0">
-                      <div className="h-56 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
-                        {product.badge && (
-                          <Badge
-                            className="absolute top-4 right-4 bg-primary text-white"
-                            variant="default"
-                            data-testid={`badge-product-${product.id}`}
-                          >
-                            {product.badge}
-                          </Badge>
-                        )}
-                        <div className="w-28 h-28 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <Factory className="h-14 w-14 text-primary/60" />
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <p className="text-xs text-primary font-semibold uppercase tracking-wider mb-2" data-testid={`text-category-${product.id}`}>
-                          {categories.find((c) => c.value === product.category)?.label}
-                        </p>
-                        <h3 className="font-heading text-xl font-semibold mb-3" data-testid={`text-name-${product.id}`}>
-                          {product.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-4" data-testid={`text-description-${product.id}`}>
-                          {product.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {product.features?.map((feature) => (
+                  <Link href={`/products/${product.id}`}>
+                    <Card
+                      className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md overflow-hidden cursor-pointer"
+                      data-testid={`card-product-${product.id}`}
+                    >
+                      <CardContent className="p-0">
+                        <div className="h-56 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center relative overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
+                          {product.badge && (
                             <Badge
-                              key={feature}
-                              variant="secondary"
-                              className="text-xs"
+                              className="absolute top-4 right-4 bg-primary text-white z-10"
+                              variant="default"
+                              data-testid={`badge-product-${product.id}`}
                             >
-                              {feature}
+                              {product.badge}
                             </Badge>
-                          ))}
+                          )}
+                          <div className="w-full h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            {product.image ? (
+                              <img
+                                src={product.image}
+                                alt={product.name}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <Factory className="h-14 w-14 text-primary/60" />
+                            )}
+                          </div>
                         </div>
-                        <div className="pt-4 border-t">
-                          <div className="grid grid-cols-2 gap-4 text-sm">
-                            <div>
-                              <p className="text-muted-foreground">Gauge Range</p>
-                              <p className="font-medium" data-testid={`text-gauge-${product.id}`}>{product.gaugeRange}</p>
-                            </div>
-                            <div>
-                              <p className="text-muted-foreground">Coating</p>
-                              <p className="font-medium" data-testid={`text-coating-${product.id}`}>{product.coating}</p>
+                        <div className="p-6">
+                          <p className="text-xs text-primary font-semibold uppercase tracking-wider mb-2" data-testid={`text-category-${product.id}`}>
+                            {categories.find((c) => c.value === product.category)?.label}
+                          </p>
+                          <h3 className="font-heading text-xl font-semibold mb-3" data-testid={`text-name-${product.id}`}>
+                            {product.name}
+                          </h3>
+                          <p className="text-muted-foreground text-sm leading-relaxed mb-4" data-testid={`text-description-${product.id}`}>
+                            {product.description}
+                          </p>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {product.features?.map((feature) => (
+                              <Badge
+                                key={feature}
+                                variant="secondary"
+                                className="text-xs"
+                              >
+                                {feature}
+                              </Badge>
+                            ))}
+                          </div>
+                          <div className="pt-4 border-t">
+                            <div className="grid grid-cols-2 gap-4 text-sm">
+                              <div>
+                                <p className="text-muted-foreground">Gauge Range</p>
+                                <p className="font-medium" data-testid={`text-gauge-${product.id}`}>{product.gaugeRange}</p>
+                              </div>
+                              <div>
+                                <p className="text-muted-foreground">Coating</p>
+                                <p className="font-medium" data-testid={`text-coating-${product.id}`}>{product.coating}</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>

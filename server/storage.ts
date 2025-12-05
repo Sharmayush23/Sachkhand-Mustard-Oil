@@ -5,13 +5,13 @@ export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  
+
   getProducts(): Promise<Product[]>;
   getProductById(id: string): Promise<Product | undefined>;
   getProductsByCategory(category: string): Promise<Product[]>;
-  
+
   getTimelineEvents(): Promise<TimelineEvent[]>;
-  
+
   createContactInquiry(inquiry: InsertContactInquiry): Promise<ContactInquiry>;
   getContactInquiries(): Promise<ContactInquiry[]>;
 }
@@ -28,6 +28,7 @@ const initialProducts: Product[] = [
     coating: "Chrome / Titanium",
     application: "Single/Double Jersey",
     badge: "Best Seller",
+    image: "/assets/products/3cfc0363cc030 (1).png",
   },
   {
     id: "hosiery-needles",
@@ -40,6 +41,7 @@ const initialProducts: Product[] = [
     coating: "Titanium",
     application: "Hosiery Production",
     badge: "Popular",
+    image: "/assets/products/c51ae525a34e2.png",
   },
   {
     id: "flat-knitting",
@@ -52,6 +54,7 @@ const initialProducts: Product[] = [
     coating: "Chrome",
     application: "Flat Knitting Machines",
     badge: null,
+    image: "/assets/products/c789b5d6c6ff8.png",
   },
   {
     id: "transfer-needles",
@@ -64,6 +67,7 @@ const initialProducts: Product[] = [
     coating: "Chrome / Nickel",
     application: "Pattern Knitting",
     badge: null,
+    image: "/assets/products/3cfc0363cc030 (1).png",
   },
   {
     id: "interlock-needles",
@@ -76,6 +80,7 @@ const initialProducts: Product[] = [
     coating: "Chrome",
     application: "Interlock Fabrics",
     badge: "New",
+    image: "/assets/products/c51ae525a34e2.png",
   },
   {
     id: "rib-needles",
@@ -88,6 +93,7 @@ const initialProducts: Product[] = [
     coating: "Titanium",
     application: "Rib Fabrics",
     badge: null,
+    image: "/assets/products/c789b5d6c6ff8.png",
   },
 ];
 
@@ -153,11 +159,11 @@ export class MemStorage implements IStorage {
     this.products = new Map();
     this.timelineEvents = new Map();
     this.contactInquiries = new Map();
-    
+
     initialProducts.forEach(product => {
       this.products.set(product.id, product);
     });
-    
+
     initialTimelineEvents.forEach(event => {
       this.timelineEvents.set(event.id, event);
     });

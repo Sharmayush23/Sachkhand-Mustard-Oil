@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Award, Globe, CheckCircle, Factory, Users, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import founderImage from "@/assets/founder.jpg";
+
 
 const stats = [
   { value: "55+", label: "Years", description: "Legacy of Innovation" },
@@ -17,16 +17,19 @@ const products = [
     title: "Circular Knitting Needles",
     description: "High-precision needles for circular knitting machines ensuring uniform loop formation.",
     category: "Circular Knitting",
+    image: "/assets/products/3cfc0363cc030 (1).png",
   },
   {
     title: "Hosiery Needles",
     description: "Premium hosiery needles designed for durability and consistent performance.",
     category: "Hosiery",
+    image: "/assets/products/c51ae525a34e2.png",
   },
   {
     title: "Flat Knitting Needles",
     description: "Precision flat needles for power-flat and hand-flat knitting applications.",
     category: "Flat Knitting",
+    image: "/assets/products/c789b5d6c6ff8.png",
   },
 ];
 
@@ -158,15 +161,15 @@ export default function HomePage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-2xl" />
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
                   <img
-                    src={founderImage}
-                    alt="Mr. Prem Nath Ji - Founder of MEFA Needles"
+                    src="/assets/products/transfer-needle.png"
+                    alt="Precision Transfer Needles"
                     className="w-full h-auto rounded-xl shadow-2xl"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-lg p-4">
                     <p className="font-heading font-semibold text-white">
-                      Mr. Prem Nath Ji
+                      Precision Transfer Needles
                     </p>
-                    <p className="text-sm text-white/70">Founder & Visionary</p>
+                    <p className="text-sm text-white/70">Advanced Technology</p>
                     <p className="text-xs text-accent mt-1 italic">
                       "Excellence through precision, quality through dedication"
                     </p>
@@ -243,8 +246,18 @@ export default function HomePage() {
                   <CardContent className="p-0">
                     <div className="h-48 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
-                      <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Factory className="h-12 w-12 text-primary/60" />
+                      <div className="w-full h-full flex items-center justify-center">
+                        {product.image ? (
+                          <img
+                            src={product.image}
+                            alt={product.title}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+                            <Factory className="h-12 w-12 text-primary/60" />
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="p-6">

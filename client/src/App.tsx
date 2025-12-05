@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import ProductsPage from "@/pages/ProductsPage";
+import ProductDetailPage from "@/pages/ProductDetailPage";
 import TimelinePage from "@/pages/TimelinePage";
 import FacilitiesPage from "@/pages/FacilitiesPage";
 import ContactPage from "@/pages/ContactPage";
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/" component={HomePage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/products" component={ProductsPage} />
+      <Route path="/products/:id" component={ProductDetailPage} />
       <Route path="/timeline" component={TimelinePage} />
       <Route path="/facilities" component={FacilitiesPage} />
       <Route path="/contact" component={ContactPage} />
