@@ -71,7 +71,7 @@ export default function ProductsPage() {
     return null;
   };
 
-  const checkGaugeOverlap = (productGauge: string | undefined, filterGauge: string): boolean => {
+  const checkGaugeOverlap = (productGauge: string | null | undefined, filterGauge: string): boolean => {
     if (!productGauge || filterGauge === "all") return true;
 
     const productRange = parseGaugeRange(productGauge);
