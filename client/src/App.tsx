@@ -5,14 +5,17 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HomePage from "@/pages/HomePage";
-import AboutPage from "@/pages/AboutPage";
-import ProductsPage from "@/pages/ProductsPage";
-import ProductDetailPage from "@/pages/ProductDetailPage";
-import TimelinePage from "@/pages/TimelinePage";
-import FacilitiesPage from "@/pages/FacilitiesPage";
-import ContactPage from "@/pages/ContactPage";
-import NotFound from "@/pages/not-found";
+import ScrollToTop from "@/components/ScrollToTop";
+import { Suspense, lazy } from "react";
+
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const ProductsPage = lazy(() => import("@/pages/ProductsPage"));
+const ProductDetailPage = lazy(() => import("@/pages/ProductDetailPage"));
+const TimelinePage = lazy(() => import("@/pages/TimelinePage"));
+const FacilitiesPage = lazy(() => import("@/pages/FacilitiesPage"));
+const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const NotFound = lazy(() => import("@/pages/not-found"));
 
 function Router() {
   return (
@@ -35,8 +38,11 @@ function App() {
       <TooltipProvider>
         <div className="min-h-screen flex flex-col">
           <Navbar />
+          <ScrollToTop />
           <main className="flex-1">
-            <Router />
+            <Suspense fallback={<div className="flex items-center justify-center min-h-[50vh]">Loading...</div>}>
+              <Router />
+            </Suspense>
           </main>
           <Footer />
         </div>
