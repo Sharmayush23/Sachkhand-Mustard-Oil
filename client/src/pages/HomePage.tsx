@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Award, Globe, CheckCircle, Factory, Users, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import newProduct1 from "@/assets/products/new_product_1.png";
+import newProduct2 from "@/assets/products/new_product_2.png";
+import newProduct3 from "@/assets/products/new_product_3.png";
 
 
 const stats = [
@@ -17,21 +20,21 @@ const products = [
     description: "Traditionally cold-pressed to preserve natural antioxidants and its authentic pungent taste.",
     category: "Purity First",
     queryCategory: "kachi-ghani",
-    image: "/assets/products/new_product_1.png",
+    image: newProduct1,
   },
   {
     title: "Cooking Essentials",
     description: "Perfect for daily Indian cooking, enhancing the flavour and health of your family meals.",
     category: "Healthy Kitchen",
     queryCategory: "cooking",
-    image: "/assets/products/new_product_2.png",
+    image: newProduct2,
   },
   {
     title: "Hair & Skin Care",
     description: "Nutrient-rich natural oil for deep conditioning and scalp health, just like the old days.",
     category: "Natural Wellness",
     queryCategory: "hair-care",
-    image: "/assets/products/new_product_3.png",
+    image: newProduct3,
   },
 ];
 
@@ -161,7 +164,7 @@ export default function HomePage() {
                 <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl" />
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
                   <img
-                    src="/src/assets/products/new_product_1.png"
+                    src={newProduct1}
                     alt="Sachkhand Pure Mustard Oil"
                     className="w-full h-auto rounded-xl shadow-2xl"
                   />

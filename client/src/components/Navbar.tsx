@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -40,7 +41,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3" data-testid="link-home-logo">
-            <img src="/src/assets/logo.png" alt="Sachkhand Logo" className="h-10 w-auto" />
+            <img src={logo} alt="Sachkhand Logo" className="h-10 w-auto" />
             <div className="flex flex-col leading-none">
               <span className="text-xl font-bold text-primary font-heading uppercase tracking-tight">SACHKHAND</span>
               <span className="text-sm font-light text-foreground/70 font-heading">Mustard Oil</span>

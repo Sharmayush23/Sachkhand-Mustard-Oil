@@ -31,7 +31,9 @@ function deduceDescription(name: string): string {
 
 // Automatically import all images from the assets/products directory
 // Use absolute path from Vite root (client directory)
-const productImages = import.meta.glob('/src/assets/products/**/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+import newProduct1 from "@/assets/products/new_product_1.png";
+import newProduct2 from "@/assets/products/new_product_2.png";
+import newProduct3 from "@/assets/products/new_product_3.png";
 
 // Hardcoded Sachkhand Mustard Oil Products
 export const products: Product[] = [
@@ -45,7 +47,7 @@ export const products: Product[] = [
         material: "Prime Mustard Seeds",
         coating: "None (Pure Oil)",
         application: "Cooking & Preservation",
-        image: "/assets/products/new_product_1.png",
+        image: newProduct1,
     },
     {
         id: "sachkhand-yellow-mustard-2",
@@ -57,7 +59,7 @@ export const products: Product[] = [
         material: "Yellow Mustard Seeds",
         coating: "None (Pure Oil)",
         application: "Daily Frying & Sautéing",
-        image: "/assets/products/new_product_2.png",
+        image: newProduct2,
     },
     {
         id: "sachkhand-pure-hair-oil-3",
@@ -69,7 +71,7 @@ export const products: Product[] = [
         material: "Selected Seeds",
         coating: "None (Pure Oil)",
         application: "Hair & Body Massage",
-        image: "/assets/products/new_product_3.png",
+        image: newProduct3,
     }
 ];
 
