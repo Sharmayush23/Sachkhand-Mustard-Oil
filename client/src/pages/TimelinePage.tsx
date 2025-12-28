@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 import { Calendar, Award, Globe, Factory, CheckCircle, Zap, Users, Building } from "lucide-react";
-import founderImage from "@/assets/founder.jpg";
 import { timelineEvents } from "@/data/timeline";
 
 const iconMap: Record<number, typeof Building> = {
@@ -27,7 +26,7 @@ export default function TimelinePage() {
 
   return (
     <div className="pt-20">
-      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-[#1A1A1A] via-[#262626] to-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div
             className="absolute inset-0"
@@ -45,15 +44,13 @@ export default function TimelinePage() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-accent font-semibold uppercase tracking-wider text-sm mb-4" data-testid="text-timeline-subtitle">
-                Our Journey
+                Our Purity Journey
               </p>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" data-testid="text-timeline-title">
-                MEFA Needles Legacy
+                Sachkhand Heritage
               </h1>
               <p className="text-white/70 text-lg mb-8" data-testid="text-timeline-description">
-                Over 55 years of precision, innovation, and excellence in textile
-                needle manufacturing. Discover the journey that made MEFA the
-                largest needle manufacturing group of Indian origin.
+                Over 45 years of unyielding purity. Explore the milestones that made Sachkhand the most trusted name for high-quality, pure mustard oil.
               </p>
               <div className="flex items-center gap-4">
                 <Calendar className="h-6 w-6 text-accent" />
@@ -68,18 +65,18 @@ export default function TimelinePage() {
               className="relative hidden lg:block"
             >
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-2xl" />
+                <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl" />
                 <img
-                  src={founderImage}
-                  alt="Mr. Prem Nath Ji - Founder of MEFA Needles"
+                  src="/src/assets/products/new_product_1.png"
+                  alt="Pure Purity at Sachkhand"
                   className="relative w-full max-w-md mx-auto rounded-xl shadow-2xl"
                   data-testid="img-founder-timeline"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md rounded-lg p-4">
                   <p className="font-heading font-semibold text-white text-lg" data-testid="text-founder-name-timeline">
-                    Mr. Prem Nath Ji
+                    Tradition of Purity
                   </p>
-                  <p className="text-white/70" data-testid="text-founder-title-timeline">Founder & Visionary (1968)</p>
+                  <p className="text-white/70" data-testid="text-founder-title-timeline">Established in 1968</p>
                 </div>
               </div>
             </motion.div>
@@ -96,17 +93,17 @@ export default function TimelinePage() {
             className="text-center mb-16"
           >
             <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4" data-testid="text-story-subtitle">
-              The MEFA Story
+              The Sachkhand Story
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold" data-testid="text-story-title">
-              Timeline of Excellence
+              Timeline of Purity
             </h2>
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary" />
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary" />
 
-            {timelineEvents.map((event, index) => {
+            {timelineEvents.map((event: any, index: number) => {
               const Icon = iconMap[event.year] || Building;
               const color = index % 2 === 0 ? "primary" : "accent";
 
@@ -165,7 +162,7 @@ export default function TimelinePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-[#1A1A1A] to-[#262626]">
+      <section className="py-16 bg-[#1A1A1A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,29 +171,27 @@ export default function TimelinePage() {
             className="space-y-6"
           >
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white" data-testid="text-legacy-title">
-              Continuing the Legacy
+              Continuing the Purity
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto" data-testid="text-legacy-description">
-              Today, MEFA Needles continues to honor Mr. Prem Nath Ji's vision by
-              delivering excellence in every needle we manufacture. Our journey of
-              innovation and quality continues.
+              Today, Sachkhand Mustard Oil continues to honor its roots by delivering the same high-purity quality that families have trusted for decades.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent" data-testid="stat-years">55+</div>
+                <div className="text-3xl font-bold text-accent" data-testid="stat-years">45+</div>
                 <div className="text-sm text-white/60 mt-1">Years</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent" data-testid="stat-countries">50+</div>
-                <div className="text-sm text-white/60 mt-1">Countries</div>
+                <div className="text-3xl font-bold text-accent" data-testid="stat-families">10k+</div>
+                <div className="text-sm text-white/60 mt-1">Families</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent" data-testid="stat-products">1000+</div>
-                <div className="text-sm text-white/60 mt-1">Products</div>
+                <div className="text-3xl font-bold text-accent" data-testid="stat-purity">100%</div>
+                <div className="text-sm text-white/60 mt-1">Pure</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent" data-testid="stat-customers">10K+</div>
-                <div className="text-sm text-white/60 mt-1">Customers</div>
+                <div className="text-3xl font-bold text-accent" data-testid="stat-quality">Top</div>
+                <div className="text-sm text-white/60 mt-1">Choice</div>
               </div>
             </div>
           </motion.div>

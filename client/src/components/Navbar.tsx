@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import mefaLogo from "@/assets/mefalogo.webp";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
-  { href: "/timeline", label: "Our History" },
-  { href: "/facilities", label: "Facilities" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About Us" },
+  { href: "/products", label: "Our Oils" },
+  { href: "/timeline", label: "Our Purity Journey" },
+  { href: "/facilities", label: "Why Choose Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
@@ -32,21 +31,20 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white/80 backdrop-blur-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-white/60 backdrop-blur-2xl border-b border-white/20 shadow-sm"
+        : "bg-white/30 backdrop-blur-xl border-b border-white/10"
+        }`}
       data-testid="navbar"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3" data-testid="link-home-logo">
-            <img
-              src={mefaLogo}
-              alt="MEFA Needles Logo"
-              className="h-12 w-auto"
-            />
+            <img src="/src/assets/logo.png" alt="Sachkhand Logo" className="h-10 w-auto" />
+            <div className="flex flex-col leading-none">
+              <span className="text-xl font-bold text-primary font-heading uppercase tracking-tight">SACHKHAND</span>
+              <span className="text-sm font-light text-foreground/70 font-heading">Mustard Oil</span>
+            </div>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -54,11 +52,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative font-medium text-sm transition-colors duration-200 ${
-                  location === link.href
-                    ? "text-primary"
-                    : "text-foreground/80 hover:text-primary"
-                }`}
+                className={`relative font-medium text-sm transition-colors duration-200 ${location === link.href
+                  ? "text-primary"
+                  : "text-foreground/80 hover:text-primary"
+                  }`}
                 data-testid={`link-nav-${link.label.toLowerCase().replace(/\s/g, "-")}`}
               >
                 {link.label}
@@ -70,9 +67,14 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <Link href="/contact">
-              <Button data-testid="button-get-quote">Get Quote</Button>
-            </Link>
+            <div className="flex flex-col items-end text-xs font-medium text-foreground/80 leading-tight">
+              <a href="tel:+919999999999" className="hover:text-primary transition-colors" data-testid="link-phone-header">
+                +91 9814144368
+              </a>
+              <a href="mailto:info@sachkhandmustardoil.com" className="hover:text-primary transition-colors" data-testid="link-email-header">
+                info@sachkhandmustardoil.com
+              </a>
+            </div>
           </div>
 
           <Button
@@ -95,20 +97,24 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block py-3 px-4 rounded-lg font-medium transition-colors ${
-                  location === link.href
-                    ? "bg-primary/10 text-primary"
-                    : "text-foreground/80 hover:bg-muted"
-                }`}
+                className={`block py-3 px-4 rounded-lg font-medium transition-colors ${location === link.href
+                  ? "bg-primary/10 text-primary"
+                  : "text-foreground/80 hover:bg-muted"
+                  }`}
                 data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s/g, "-")}`}
               >
                 {link.label}
               </Link>
             ))}
             <div className="pt-4">
-              <Link href="/contact">
-                <Button className="w-full" data-testid="button-mobile-get-quote">Get Quote</Button>
-              </Link>
+              <div className="flex flex-col gap-2 pt-2 border-t mt-2">
+                <a href="tel:+919999999999" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors text-center py-2" data-testid="link-phone-mobile">
+                  +91 9814144368
+                </a>
+                <a href="mailto:info@sachkhandmustardoil.com" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors text-center py-2" data-testid="link-email-mobile">
+                  info@sachkhandmustardoil.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

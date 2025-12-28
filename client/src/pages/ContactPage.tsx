@@ -34,22 +34,22 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["info@mefaneedles.com", "sales@mefaneedles.com"],
+    details: ["info@sachkhandmustardoil.com", "support@sachkhandoil.com"],
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91-9115550799", "+91-9115550739"],
+    details: ["+91 9999P1628", "+91 98765 43210"],
   },
   {
     icon: MapPin,
     title: "Address",
-    details: ["B-XXI – 14531, G.T. Road", "Ludhiana - 141003 (PB.)", "Punjab, India"],
+    details: ["Paali Nagar, Guru Nanak Nagar", "Opposite Smart Store, Amloh Road", "Khanna - 141401, Punjab"],
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Monday - Saturday", "9:00 AM - 6:00 PM IST"],
+    details: ["Monday - Saturday", "8:00 AM - 8:00 PM IST"],
   },
 ];
 
@@ -62,7 +62,7 @@ const socialLinks = [
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
   return (
     <div className="pt-20">
-      <section className="relative min-h-[40vh] flex items-center bg-gradient-to-br from-[#1A1A1A] via-[#262626] to-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[40vh] flex items-center bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div
             className="absolute inset-0"
@@ -118,14 +118,13 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-accent font-semibold uppercase tracking-wider text-sm mb-4" data-testid="text-contact-subtitle">
-              Get In Touch
+              Reach Out to Us
             </p>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" data-testid="text-contact-title">
-              Contact Us
+              Let's Talk Purity
             </h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto" data-testid="text-contact-description">
-              Have questions about our products or services? Our team is here to
-              help. Reach out and we'll respond within 24 hours.
+              Have questions about our Kachi Ghani oil or want to place a bulk order? Our team is here to help you bring health to your home.
             </p>
           </motion.div>
         </div>

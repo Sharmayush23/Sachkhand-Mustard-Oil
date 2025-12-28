@@ -6,56 +6,55 @@ import { Card, CardContent } from "@/components/ui/card";
 
 
 const stats = [
-  { value: "55+", label: "Years", description: "Legacy of Innovation" },
-  { value: "50+", label: "Nations", description: "Global Reach" },
-  { value: "100%", label: "Quality", description: "Guarantee" },
-  { value: "#1", label: "Indian", description: "Origin Leader" },
+  { value: "45+", label: "Years", description: "Legacy of Purity" },
+  { value: "10k+", label: "Families", description: "Trusted Daily" },
+  { value: "100%", label: "Pure", description: "Chemical Free" },
+  { value: "#1", label: "Choice", description: "In Khanna" },
 ];
-
 const products = [
   {
-    title: "Circular Knitting Needles",
-    description: "High-precision needles for circular knitting machines ensuring uniform loop formation.",
-    category: "Circular Knitting",
-    queryCategory: "circular",
-    image: "/assets/products/3cfc0363cc030 (1).png",
+    title: "Kachi Ghani Mustard Oil",
+    description: "Traditionally cold-pressed to preserve natural antioxidants and its authentic pungent taste.",
+    category: "Purity First",
+    queryCategory: "kachi-ghani",
+    image: "/src/assets/products/new_product_1.png",
   },
   {
-    title: "Hosiery Needles",
-    description: "Premium hosiery needles designed for durability and consistent performance.",
-    category: "Hosiery",
-    queryCategory: "hosiery",
-    image: "/assets/products/c51ae525a34e2.png",
+    title: "Cooking Essentials",
+    description: "Perfect for daily Indian cooking, enhancing the flavour and health of your family meals.",
+    category: "Healthy Kitchen",
+    queryCategory: "cooking",
+    image: "/src/assets/products/new_product_2.png",
   },
   {
-    title: "Flat Knitting Needles",
-    description: "Precision flat needles for power-flat and hand-flat knitting applications.",
-    category: "Flat Knitting",
-    queryCategory: "flat",
-    image: "/assets/products/c789b5d6c6ff8.png",
+    title: "Hair & Skin Care",
+    description: "Nutrient-rich natural oil for deep conditioning and scalp health, just like the old days.",
+    category: "Natural Wellness",
+    queryCategory: "hair-care",
+    image: "/src/assets/products/new_product_3.png",
   },
 ];
 
 const values = [
   {
     icon: Zap,
-    title: "Continuous Improvement",
-    description: "Committed to innovation, we constantly enhance our processes and products to meet evolving customer needs.",
+    title: "Traditional Method",
+    description: "We use the ancient cold-pressing (Kachi Ghani) method to extract oil, ensuring all nutrients stay intact.",
   },
   {
     icon: Users,
-    title: "Expert Employees",
-    description: "Our skilled team, led by experienced quality controllers, meticulously oversees production processes.",
+    title: "Trusted by Generations",
+    description: "Over 45 years of experience in delivering quality that mothers trust for their families.",
   },
   {
     icon: Shield,
-    title: "Quality Assurance",
-    description: "We prioritize quality at Mefa Needles, subjecting each product to rigorous quality checks.",
+    title: "100% Quality",
+    description: "Every drop of Sachkhand oil is guaranteed pure, manufactured to meet the highest health standards.",
   },
   {
     icon: Factory,
-    title: "State-of-Art Facilities",
-    description: "Sophisticated machinery ensuring the precise manufacture of all machine parts to high accuracy standards.",
+    title: "Farm to Kitchen",
+    description: "Directly sourced from the finest mustard seeds, processed hygienically in our state-of-the-art facility.",
   },
 ];
 
@@ -76,7 +75,7 @@ const stagger = {
 export default function HomePage() {
   return (
     <div className="pt-20">
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-[#1A1A1A] via-[#262626] to-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div
             className="absolute inset-0"
@@ -96,20 +95,18 @@ export default function HomePage() {
             >
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/80 text-sm" data-testid="badge-hero">
                 <Award className="h-4 w-4 text-accent" />
-                <span>India's Largest Needle Manufacturing Group</span>
+                <span>Khanna's Most Trusted Purity Heritage</span>
               </div>
 
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight" data-testid="text-hero-title">
-                Precision in Every{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Stitch
+                The Essence of Pure{" "}
+                <span className="text-primary">
+                  Tradition
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl" data-testid="text-hero-description">
-                Building the future of knitting since 1968. Premium quality
-                circular, flat, and hosiery knitting needles trusted by
-                industries across 50+ nations.
+                Elevating the standards of purity in every drop. Trusted by families for over 45 years for our cold-pressed, high-quality mustard oil.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -140,7 +137,7 @@ export default function HomePage() {
                     transition={{ delay: 0.5 + index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                    <div className="text-3xl sm:text-4xl font-bold text-primary">
                       {stat.value}
                     </div>
                     <div className="text-xs text-white/50 uppercase tracking-wider mt-1">
@@ -161,20 +158,20 @@ export default function HomePage() {
               className="relative hidden lg:block"
             >
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-2xl" />
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl" />
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
                   <img
-                    src="/assets/products/transfer-needle.png"
-                    alt="Precision Transfer Needles"
+                    src="/src/assets/products/new_product_1.png"
+                    alt="Sachkhand Pure Mustard Oil"
                     className="w-full h-auto rounded-xl shadow-2xl"
                   />
                   <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-lg p-4">
                     <p className="font-heading font-semibold text-white">
-                      Precision Transfer Needles
+                      Traditional Extraction
                     </p>
-                    <p className="text-sm text-white/70">Advanced Technology</p>
+                    <p className="text-sm text-white/70">100% Purity Guaranteed</p>
                     <p className="text-xs text-accent mt-1 italic">
-                      "Excellence through precision, quality through dedication"
+                      "Pure tradition, healthy standards"
                     </p>
                   </div>
                 </div>
@@ -219,20 +216,19 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-primary font-semibold uppercase tracking-wider text-sm mb-4"
             >
-              Our Products
+              Our Range
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="font-heading text-3xl sm:text-4xl font-bold mb-4"
             >
-              Premium Quality Needles
+              Purity in Every Drop
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-muted-foreground max-w-2xl mx-auto"
             >
-              Engineered with precision for optimal performance in textile
-              manufacturing applications worldwide.
+              Expertly extracted to deliver the health and authentic taste that your family deserves.
             </motion.p>
           </motion.div>
 
@@ -248,8 +244,8 @@ export default function HomePage() {
                 <Link href={`/products?category=${product.queryCategory}`}>
                   <Card className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md cursor-pointer">
                     <CardContent className="p-0">
-                      <div className="h-48 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
+                      <div className="h-48 bg-muted flex items-center justify-center relative overflow-hidden">
+                        <div className="absolute inset-0 bg-primary/5" />
                         <div className="w-full h-full flex items-center justify-center">
                           {product.image ? (
                             <img
@@ -317,14 +313,13 @@ export default function HomePage() {
               variants={fadeInUp}
               className="font-heading text-3xl sm:text-4xl font-bold mb-4"
             >
-              Committed to Excellence
+              Rooted in Tradition
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-muted-foreground max-w-2xl mx-auto"
             >
-              Five decades of industry leadership built on innovation, quality,
-              and customer satisfaction.
+              Over four decades of commitment to health, honesty, and the authentic taste of Punjab.
             </motion.p>
           </motion.div>
 
@@ -339,7 +334,7 @@ export default function HomePage() {
               <motion.div key={value.title} variants={fadeInUp}>
                 <Card className="h-full border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mx-auto mb-4">
                       <value.icon className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="font-heading font-semibold text-lg mb-3">
@@ -356,7 +351,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#1A1A1A] to-[#262626] text-white">
+      <section className="py-20 bg-[#1A1A1A] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -365,12 +360,11 @@ export default function HomePage() {
             className="space-y-8"
           >
             <h2 className="font-heading text-3xl sm:text-4xl font-bold">
-              Ready to Partner with India's{" "}
-              <span className="text-accent">Leading</span> Needle Manufacturer?
+              Ready to Upgrade to{" "}
+              <span className="text-accent">Authentic</span> Purity?
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              Get in touch with our team to discuss your requirements and
-              discover how MEFA Needles can elevate your textile production.
+              Switch to Sachkhand Mustard Oil today and experience the health and tradition of world-class oil production.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contact">

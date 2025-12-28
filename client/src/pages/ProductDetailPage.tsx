@@ -143,21 +143,20 @@ export default function ProductDetailPage() {
 
                         <Separator />
 
-                        {/* Specifications */}
                         <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
                             <div>
-                                <h3 className="font-semibold text-sm uppercase tracking-wide text-primary mb-4">Technical Specs</h3>
+                                <h3 className="font-semibold text-sm uppercase tracking-wide text-primary mb-4">Oil Specifications</h3>
                                 <ul className="space-y-3">
                                     <li className="flex justify-between items-center py-2 border-b border-border/50">
-                                        <span className="text-muted-foreground text-sm">Gauge</span>
+                                        <span className="text-muted-foreground text-sm">Packaging</span>
                                         <span className="font-medium">{product.gaugeRange}</span>
                                     </li>
                                     <li className="flex justify-between items-center py-2 border-b border-border/50">
-                                        <span className="text-muted-foreground text-sm">Material</span>
+                                        <span className="text-muted-foreground text-sm">Source</span>
                                         <span className="font-medium">{product.material}</span>
                                     </li>
                                     <li className="flex justify-between items-center py-2 border-b border-border/50">
-                                        <span className="text-muted-foreground text-sm">Coating</span>
+                                        <span className="text-muted-foreground text-sm">Purity</span>
                                         <span className="font-medium">{product.coating}</span>
                                     </li>
                                 </ul>
@@ -190,7 +189,7 @@ export default function ProductDetailPage() {
                             <Link href="/contact">
                                 <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg font-semibold shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all gap-2">
                                     <Mail className="h-5 w-5" />
-                                    Request Quote / Inquiry
+                                    Request Bulk Pricing
                                 </Button>
                             </Link>
                             <p className="text-xs text-muted-foreground text-center sm:text-left pl-1">
@@ -202,36 +201,38 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Related Products */}
-            {relatedProducts.length > 0 && (
-                <section className="py-20 bg-muted/20 border-t mt-12">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-2xl font-bold mb-8 font-heading">Related Products</h2>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            {relatedProducts.map((p) => (
-                                <motion.div key={p.id} variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
-                                    <Link href={`/products/${p.id}`}>
-                                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full border-0 bg-background">
-                                            <CardContent className="p-4 flex gap-4 items-center h-full">
-                                                <div className="h-20 w-20 bg-muted rounded-lg flex items-center justify-center shrink-0">
-                                                    {p.image ? (
-                                                        <img src={p.image} className="w-full h-full object-contain p-2" alt={p.name} />
-                                                    ) : (
-                                                        <Factory className="h-8 w-8 text-muted-foreground/30" />
-                                                    )}
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold line-clamp-1">{p.name}</h4>
-                                                    <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{p.description}</p>
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    </Link>
-                                </motion.div>
-                            ))}
+            {
+                relatedProducts.length > 0 && (
+                    <section className="py-20 bg-muted/20 border-t mt-12">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-2xl font-bold mb-8 font-heading">Related Products</h2>
+                            <div className="grid md:grid-cols-3 gap-6">
+                                {relatedProducts.map((p) => (
+                                    <motion.div key={p.id} variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
+                                        <Link href={`/products/${p.id}`}>
+                                            <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full border-0 bg-background">
+                                                <CardContent className="p-4 flex gap-4 items-center h-full">
+                                                    <div className="h-20 w-20 bg-muted rounded-lg flex items-center justify-center shrink-0">
+                                                        {p.image ? (
+                                                            <img src={p.image} className="w-full h-full object-contain p-2" alt={p.name} />
+                                                        ) : (
+                                                            <Factory className="h-8 w-8 text-muted-foreground/30" />
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold line-clamp-1">{p.name}</h4>
+                                                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{p.description}</p>
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                </section>
-            )}
-        </div>
+                    </section>
+                )
+            }
+        </div >
     );
 }

@@ -5,56 +5,56 @@ import { Card, CardContent } from "@/components/ui/card";
 const facilities = [
   {
     icon: Cpu,
-    title: "Advanced Technology",
-    description: "Sophisticated knitting machines and hosiery machines used to produce individual articles to an advanced degree of product completion. Our technology ensures precision at every step.",
+    title: "Purity Testing Lab",
+    description: "We use advanced testing methods to ensure every batch of mustard oil is 100% pure and free from any adulterants.",
   },
   {
     icon: Cog,
-    title: "Precision Manufacturing",
-    description: "Our facilities boast sophisticated machining equipment, ensuring the precise manufacture of all machine parts to consistently high accuracy standards that exceed industry benchmarks.",
+    title: "Kachi Ghani Extraction",
+    description: "Our traditional cold-pressing units are optimized for purity and nutrient retention, producing liters of healthy oil every hour.",
   },
   {
-    icon: Users,
-    title: "Skilled Assembly",
-    description: "Highly skilled technicians meticulously assemble machines. Each undergoes rigorous quality control inspections throughout manufacturing and final testing before delivery.",
+    icon: Shield,
+    title: "Natural Filtration",
+    description: "Our proprietary natural filtration process removes impurities while keeping the essential vitamins and pungent aroma intact.",
   },
   {
     icon: Target,
-    title: "Strategy & Planning",
-    description: "A strategic plan focused on business mid- to long-term goals, explaining the basic strategy for achieving them through innovation, quality, and customer satisfaction.",
+    title: "Seed Analysis",
+    description: "Every batch of raw mustard seeds undergoes rigorous analysis to ensure only the finest quality seeds are used for extraction.",
   },
   {
     icon: TrendingUp,
-    title: "Business Growth",
-    description: "Business growth is a function of the business lifecycle, industry growth trend, and owner's desire for equity value creation. We continuously invest in expanding our capabilities.",
+    title: "Automated Hygienic Control",
+    description: "We integrated automated bottling and sealing systems to maintain the highest levels of hygiene and prevent contamination.",
   },
   {
     icon: Clock,
-    title: "On-Time Delivery",
-    description: "We pride ourselves on our ability to fulfill transactions within the promised time period, ensuring client satisfaction and maintaining long-term business relationships.",
+    title: "Efficient Supply Chain",
+    description: "Our facility is equipped with a modern warehouse and distribution system to ensure fresh oil reaches every household promptly.",
   },
 ];
 
 const capabilities = [
   {
     icon: CheckCircle,
-    title: "ISO Certified Manufacturing",
-    description: "Our manufacturing processes are ISO certified, ensuring consistent quality and adherence to international standards.",
+    title: "Quality Certified",
+    description: "Our extraction unit operates under strict quality management systems, ensuring national food safety standards are met consistently.",
   },
   {
     icon: Shield,
-    title: "Quality Control Lab",
-    description: "State-of-the-art quality control laboratory with advanced testing equipment for comprehensive product evaluation.",
+    title: "Purity Guarantee",
+    description: "We provide a 100% purity guarantee on every bottle, ensuring our oil is free from any chemicals or preservatives.",
   },
   {
     icon: Cog,
-    title: "R&D Center",
-    description: "Dedicated research and development center for continuous product innovation and process improvement.",
+    title: "Traditional Methods",
+    description: "We stick to the ancient Kachi Ghani method to preserve the authentic pungent taste and health benefits of mustard oil.",
   },
   {
     icon: Users,
-    title: "Skilled Workforce",
-    description: "Over 200 trained professionals with expertise in needle manufacturing and quality assurance.",
+    title: "Trusted Regionally",
+    description: "With a strong presence across Punjab, we are a leading provider of pure mustard oil to healthy Indian kitchens.",
   },
 ];
 
@@ -75,7 +75,7 @@ const stagger = {
 export default function FacilitiesPage() {
   return (
     <div className="pt-20">
-      <section className="relative min-h-[50vh] flex items-center bg-gradient-to-br from-[#1A1A1A] via-[#262626] to-[#1A1A1A] overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div
             className="absolute inset-0"
@@ -92,15 +92,13 @@ export default function FacilitiesPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-accent font-semibold uppercase tracking-wider text-sm mb-4" data-testid="text-facilities-subtitle">
-              Our Infrastructure
+              Our Production Process
             </p>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" data-testid="text-facilities-title">
-              State-of-the-Art Facilities
+              State-of-the-Art Purity
             </h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto" data-testid="text-facilities-description">
-              Where precision meets innovation. Our manufacturing plant is
-              equipped with cutting-edge machinery ensuring the highest quality
-              standards in every needle produced.
+              Step into the world of traditional excellence. Where ancient wisdom meets modern hygiene to deliver 100% pure mustard oil for your home.
             </p>
           </motion.div>
         </div>
@@ -119,20 +117,19 @@ export default function FacilitiesPage() {
               variants={fadeInUp}
               className="text-primary font-semibold uppercase tracking-wider text-sm mb-4"
             >
-              Manufacturing Excellence
+              Pure Oil Production
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="font-heading text-3xl sm:text-4xl font-bold mb-4"
             >
-              Our Capabilities
+              Our Commitment to Purity
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-muted-foreground max-w-2xl mx-auto"
             >
-              From advanced machinery to skilled workforce, our facilities are
-              designed to deliver excellence at every stage of production.
+              From seed analysis to traditional Kachi Ghani extraction, we ensure purity at every stage of oil production.
             </motion.p>
           </motion.div>
 
@@ -147,7 +144,7 @@ export default function FacilitiesPage() {
               <motion.div key={facility.title} variants={fadeInUp}>
                 <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6">
                       <facility.icon className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="font-heading font-semibold text-xl mb-3">
@@ -177,14 +174,9 @@ export default function FacilitiesPage() {
               variants={fadeInUp}
               className="text-primary font-semibold uppercase tracking-wider text-sm mb-4"
             >
-              Why Choose Us
+              Why Choose Sachkhand
             </motion.p>
-            <motion.h2
-              variants={fadeInUp}
-              className="font-heading text-3xl sm:text-4xl font-bold"
-            >
-              Key Strengths
-            </motion.h2>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold">Key Technical Strengths</h2>
           </motion.div>
 
           <motion.div
@@ -215,7 +207,55 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-[#1A1A1A] to-[#262626]">
+      <section className="py-20 bg-background overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4">Testimonials</p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold">Trusted by Manufacturers</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: "Suman Rani", role: "Homemaker", quote: "Sachkhand oil has the perfect pungent aroma that makes our traditional dishes taste authentic. My family loves it!" },
+              { name: "Anil Verma", role: "Health Enthusiast", quote: "We've been using Sachkhand for over a decade. The purity and consistent quality help us maintain a healthy lifestyle." },
+              { name: "Harish Kumar", role: "Local Restrauteur", quote: "Reliable partner for all our oil needs. Their oil enhances the flavor of our pickles and curries perfectly." }
+            ].map((t) => (
+              <Card key={t.name} className="border-0 shadow-lg bg-muted/50">
+                <CardContent className="p-8 italic text-muted-foreground relative">
+                  <span className="text-6xl text-primary/10 absolute top-4 left-4 font-serif">"</span>
+                  <p className="relative z-10 mb-6">{t.quote}</p>
+                  <div className="not-italic">
+                    <p className="font-bold text-foreground">{t.name}</p>
+                    <p className="text-xs">{t.role}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4">FAQ</p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold">Common Questions</h2>
+          </div>
+          <div className="space-y-6">
+            {[
+              { q: "What makes Sachkhand oil different?", a: "Our traditional Kachi Ghani extraction and rigorous purity testing ensure that Sachkhand oil is more flavorful and healthier than standard refined options." },
+              { q: "Is your oil chemical-free?", a: "Yes, we guarantee that our mustard oil is 100% pure and free from any added chemicals or preservatives." },
+              { q: "How do you ensure quality control?", a: "We use laboratory testing and automated hygienic bottling to ensure every single bottle meets our zero-adulteration policy." }
+            ].map((item, i) => (
+              <div key={i} className="bg-background rounded-xl p-6 shadow-sm border">
+                <h3 className="font-heading font-semibold text-lg mb-2">{item.q}</h3>
+                <p className="text-muted-foreground text-sm">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -224,20 +264,20 @@ export default function FacilitiesPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
           >
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-accent">50,000+</div>
-              <div className="text-white/60 mt-2">Sq. Ft. Facility</div>
+              <div className="text-4xl sm:text-5xl font-bold text-accent">100%</div>
+              <div className="text-white/60 mt-2">Pure Purity</div>
             </div>
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-accent">200+</div>
-              <div className="text-white/60 mt-2">Skilled Workers</div>
+              <div className="text-4xl sm:text-5xl font-bold text-accent">45+</div>
+              <div className="text-white/60 mt-2">Years of Legacy</div>
             </div>
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-accent">50+</div>
-              <div className="text-white/60 mt-2">Machines</div>
+              <div className="text-4xl sm:text-5xl font-bold text-accent">Trusted</div>
+              <div className="text-white/60 mt-2">By Thousands</div>
             </div>
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-accent">24/7</div>
-              <div className="text-white/60 mt-2">Production</div>
+              <div className="text-4xl sm:text-5xl font-bold text-accent">Natural</div>
+              <div className="text-white/60 mt-2">Nutrients Intact</div>
             </div>
           </motion.div>
         </div>

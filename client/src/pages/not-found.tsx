@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="pt-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-muted/30 to-background">
+    <div className="pt-20 min-h-screen flex items-center justify-center bg-background">
       <div className="max-w-xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,10 +13,10 @@ export default function NotFound() {
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
-          <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="text-8xl sm:text-9xl font-bold text-primary">
             404
           </div>
-          
+
           <div className="space-y-4">
             <h1 className="font-heading text-3xl sm:text-4xl font-bold">
               Page Not Found

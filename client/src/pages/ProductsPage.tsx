@@ -10,10 +10,10 @@ import { products } from "@/data/products";
 
 const categories = [
   { value: "all", label: "All Collections" },
-  { value: "circular", label: "Circular Knitting" },
-  { value: "hosiery", label: "Hosiery" },
-  { value: "flat", label: "Flat Knitting" },
-  { value: "transfer", label: "Transfer Needles" },
+  { value: "kachi-ghani", label: "Kachi Ghani" },
+  { value: "cooking", label: "Daily Cooking" },
+  { value: "hair-care", label: "Hair & Skin Care" },
+  { value: "preservation", label: "Preservation" },
 ];
 
 const fadeInUp = {
@@ -53,7 +53,7 @@ export default function ProductsPage() {
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+          <div className="absolute inset-0 bg-black/60 z-10" />
           <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80')] bg-cover bg-center" />
         </div>
 
@@ -67,7 +67,7 @@ export default function ProductsPage() {
               Our Products
             </h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              Precision engineered needles for every knitting application.
+              Pure tradition in every drop. Healthy oils for every kitchen and wellness need.
             </p>
           </motion.div>
         </div>
@@ -97,7 +97,7 @@ export default function ProductsPage() {
             <div className="relative w-full md:w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search needles..."
+                placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 bg-muted/50 border-transparent focus:bg-background focus:border-primary transition-all"
@@ -138,7 +138,7 @@ export default function ProductsPage() {
                               {product.badge}
                             </Badge>
                           )}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                           {product.image ? (
                             <img
                               src={product.image}
@@ -202,9 +202,9 @@ export default function ProductsPage() {
       {/* Call to Action */}
       <section className="py-20 bg-primary/5 border-t">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold mb-4 font-heading">Need Custom Specifications?</h2>
+          <h2 className="text-3xl font-bold mb-4 font-heading">Interested in Bulk Orders?</h2>
           <p className="text-muted-foreground mb-8 text-lg">
-            We manufacture needles to your exact requirements. Contact our engineering team for custom orders.
+            We supply pure mustard oil for retail and commercial use. Contact our team for customized bulk pricing.
           </p>
           <Link href="/contact">
             <Button size="lg" className="px-8 h-12 text-lg">
