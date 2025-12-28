@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 export function serveStatic(app: Express) {
-  const distPath = __dirname;
+  const distPath = path.resolve(__dirname, "public");
   if (!fs.existsSync(distPath)) {
     console.warn(`Could not find the build directory: ${distPath}, skipping static file serving`);
     return;
