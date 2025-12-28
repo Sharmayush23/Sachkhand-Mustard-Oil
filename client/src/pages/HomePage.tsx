@@ -17,21 +17,21 @@ const products = [
     description: "Traditionally cold-pressed to preserve natural antioxidants and its authentic pungent taste.",
     category: "Purity First",
     queryCategory: "kachi-ghani",
-    image: "/src/assets/products/new_product_1.png",
+    image: "/assets/products/new_product_1.png",
   },
   {
     title: "Cooking Essentials",
     description: "Perfect for daily Indian cooking, enhancing the flavour and health of your family meals.",
     category: "Healthy Kitchen",
     queryCategory: "cooking",
-    image: "/src/assets/products/new_product_2.png",
+    image: "/assets/products/new_product_2.png",
   },
   {
     title: "Hair & Skin Care",
     description: "Nutrient-rich natural oil for deep conditioning and scalp health, just like the old days.",
     category: "Natural Wellness",
     queryCategory: "hair-care",
-    image: "/src/assets/products/new_product_3.png",
+    image: "/assets/products/new_product_3.png",
   },
 ];
 

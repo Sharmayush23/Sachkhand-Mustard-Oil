@@ -45,7 +45,7 @@ export const products: Product[] = [
         material: "Prime Mustard Seeds",
         coating: "None (Pure Oil)",
         application: "Cooking & Preservation",
-        image: "/src/assets/products/new_product_1.png",
+        image: "/assets/products/new_product_1.png",
     },
     {
         id: "sachkhand-yellow-mustard-2",
@@ -57,7 +57,7 @@ export const products: Product[] = [
         material: "Yellow Mustard Seeds",
         coating: "None (Pure Oil)",
         application: "Daily Frying & Sautéing",
-        image: "/src/assets/products/new_product_2.png",
+        image: "/assets/products/new_product_2.png",
     },
     {
         id: "sachkhand-pure-hair-oil-3",
@@ -69,7 +69,7 @@ export const products: Product[] = [
         material: "Selected Seeds",
         coating: "None (Pure Oil)",
         application: "Hair & Body Massage",
-        image: "/src/assets/products/new_product_3.png",
+        image: "/assets/products/new_product_3.png",
     }
 ];
 

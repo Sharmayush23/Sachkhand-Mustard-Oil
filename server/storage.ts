@@ -28,7 +28,7 @@ const initialProducts: Product[] = [
     coating: "None (Pure Oil)",
     application: "Cooking & Preservation",
     badge: "Best Seller",
-    image: "/src/assets/products/new_product_1.png",
+    image: "/assets/products/new_product_1.png",
   },
   {
     id: "sachkhand-yellow-mustard-2",
@@ -41,7 +41,7 @@ const initialProducts: Product[] = [
     coating: "None (Pure Oil)",
     application: "Daily Frying & Sautéing",
     badge: "Healthy Choice",
-    image: "/src/assets/products/new_product_2.png",
+    image: "/assets/products/new_product_2.png",
   },
   {
     id: "sachkhand-pure-hair-oil-3",
@@ -54,7 +54,7 @@ const initialProducts: Product[] = [
     coating: "None (Pure Oil)",
     application: "Hair & Body Massage",
     badge: "Pure Natural",
-    image: "/src/assets/products/new_product_3.png",
+    image: "/assets/products/new_product_3.png",
   }
 ];
 
