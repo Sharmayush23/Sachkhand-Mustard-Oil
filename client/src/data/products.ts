@@ -54,7 +54,7 @@ export const products: Product[] = [
         id: "mustard-oil",
         name: "Mustard Oil",
         category: "oils",
-        description: "Traditionally cold-pressed mustard oil with matches purity and health standards.",
+        description: "Traditionally cold-pressed mustard oil that matches strict purity and health standards.",
         features: ["100% Pure", "Cold Pressed", "No Chemicals", "Sharp Aroma"],
         gaugeRange: "500ml, 1L, 2L, 5L",
         material: "Prime Mustard Seeds",
@@ -122,7 +122,7 @@ export const products: Product[] = [
         gaugeRange: "25kg, 50kg Bags",
         material: "Cottonseeds",
         coating: "Pressed Cake",
-        application: "Milking cow in cattle feed",
+        application: "Ideal for milking cows",
         image: cottonseedCakeImg,
         theme: {
             primary: "0 84% 50%",         // Vibrant Red (from bag)
@@ -143,7 +143,7 @@ export const products: Product[] = [
         gaugeRange: "50kg Bags",
         material: "Multigrain Mix",
         coating: "Pelletized",
-        application: "To milking cattle and bufallos",
+        application: "For milking cattle and buffaloes",
         image: cattleFeedImg,
         theme: {
             primary: "0 84% 50%",         // Red Button #E51C23
