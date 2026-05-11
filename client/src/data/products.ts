@@ -95,13 +95,13 @@ export const products: Product[] = [
     {
         id: "mustard-cake",
         name: "Mustard Cake",
-        category: "oils",
-        description: "Light and healthy sunflower oil, perfect for everyday cooking and keeping your heart healthy.",
-        features: ["Heart Healthy", "Light & Neutral", "Zero Cholesterol", "Rich in Vitamin E"],
-        gaugeRange: "1L, 2L, 5L",
-        material: "Sunflower Seeds",
-        coating: "Refined",
-        application: "Daily Cooking & Frying",
+        category: "cattle-feed",
+        description: "Nutritious mustard cake, a high-protein supplement for livestock health and milk production.",
+        features: ["High Protein", "Energy Rich", "Natural Fiber", "Livestock Growth"],
+        gaugeRange: "25kg, 50kg Bags",
+        material: "Mustard Seeds",
+        coating: "Pressed Cake",
+        application: "Ideal for milking cows and cattle",
         image: sunflowerOilImg,
         theme: {
             primary: "123 46% 34%",       // Green for health
