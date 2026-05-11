@@ -95,13 +95,13 @@ export const products: Product[] = [
     {
         id: "mustard-cake",
         name: "Mustard Cake",
-        category: "fertilizer",
-        description: "Nutrient-rich organic mustard cake (Sarson Khali), an excellent natural fertilizer to boost nitrogen, phosphorus, and potassium levels in soil.",
-        features: ["100% Organic", "NPK Booster", "Natural Fertilizer", "Growth Enhancer"],
-        gaugeRange: "1kg, 5kg, 25kg",
-        material: "Pure Mustard Seeds",
-        coating: "Crushed Cake",
-        application: "Apply every 15-20 days to plants. Soak 100g in 1L water for 3-4 days, then dilute 1:10 with water for flowering and vegetable plants.",
+        category: "cattle-feed",
+        description: "Nutritious mustard cake, a high-protein supplement for livestock health and milk production.",
+        features: ["High Protein", "Energy Rich", "Natural Fiber", "Livestock Growth"],
+        gaugeRange: "25kg, 50kg Bags",
+        material: "Mustard Seeds",
+        coating: "Pressed Cake",
+        application: "Ideal for milking cows and cattle",
         image: mustardCakeImg,
         theme: {
             primary: "123 46% 34%",       // Green for health

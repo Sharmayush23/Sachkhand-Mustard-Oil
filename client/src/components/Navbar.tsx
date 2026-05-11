@@ -75,7 +75,7 @@ export default function Navbar() {
                               {product.name}
                             </span>
                             <span className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">
-                              {product.category === "oils" ? "Premium Oil" : product.category === "fertilizer" ? "Organic Fertilizer" : "Essential Feed"}
+                              {product.category === "oils" ? "Premium Oil" : "Essential Feed"}
                             </span>
                           </Link>
                         ))}
