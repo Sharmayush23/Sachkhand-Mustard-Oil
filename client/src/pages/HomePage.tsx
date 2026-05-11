@@ -17,7 +17,7 @@ const stats = [
 const landingProducts = allProducts.map(p => ({
   title: p.name,
   description: p.description,
-  category: p.category === "oils" ? "Purity First" : "Nutritious Feed",
+  category: p.category === "oils" ? "Purity First" : p.category === "fertilizer" ? "Natural Growth" : "Nutritious Feed",
   queryCategory: p.category,
   image: p.image,
   id: p.id
