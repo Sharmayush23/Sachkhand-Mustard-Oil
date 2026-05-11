@@ -44,8 +44,8 @@ const initialProducts: Product[] = [
     image: "/src/assets/products/final-images/cotton-seed-refined-oil.png",
   },
   {
-    id: "sunflower-oil",
-    name: "Sunflower Oil",
+    id: "mustard-cake",
+    name: "Mustard Cake",
     category: "oils",
     description: "Light and healthy sunflower oil, perfect for everyday cooking and keeping your heart healthy.",
     features: ["Heart Healthy", "Light & Neutral", "Zero Cholesterol", "Rich in Vitamin E"],

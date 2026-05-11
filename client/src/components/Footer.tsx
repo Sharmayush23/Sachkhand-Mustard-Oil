@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 
 const productLinks = [
   { label: "Mustard Oil", href: "/products" },
-  { label: "Sunflower Oil", href: "/products" },
+  { label: "Mustard Cake", href: "/products" },
   { label: "Cotton Refined Oil", href: "/products" },
   { label: "Cattle Feed", href: "/products" },
   { label: "Cottonseed Cake", href: "/products" },
