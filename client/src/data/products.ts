@@ -44,7 +44,7 @@ function deduceDescription(name: string): string {
 // Use absolute path from Vite root (client directory)
 import mustardOilImg from "@/assets/products/final-images/mustard-oil.png";
 import cottonOilImg from "@/assets/products/final-images/cotton-seed-refined-oil.png";
-import sunflowerOilImg from "@/assets/products/final-images/sunflower-oil.png";
+import mustardCakeImg from "@/assets/products/final-images/sunflower-oil.png";
 import cottonseedCakeImg from "@/assets/products/final-images/cotton-seed-cake.jpeg";
 import cattleFeedImg from "@/assets/products/final-images/cattle-feed.png";
 
@@ -102,7 +102,7 @@ export const products: Product[] = [
         material: "Mustard Seeds",
         coating: "Pressed Cake",
         application: "Ideal for milking cows and cattle",
-        image: sunflowerOilImg,
+        image: mustardCakeImg,
         theme: {
             primary: "123 46% 34%",       // Green for health
             secondary: "45 100% 50%",     // Bright Yellow

@@ -8,7 +8,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/products", label: "Our Oils" },
+  { href: "/products", label: "Our Products" },
   { href: "/timeline", label: "Our Purity Journey" },
   { href: "/facilities", label: "Why Choose Us" },
   { href: "/contact", label: "Contact Us" },

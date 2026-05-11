@@ -122,7 +122,7 @@ export default function ProductDetailPage() {
 
                         <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
                             <div>
-                                <h3 className="font-semibold text-sm uppercase tracking-wide text-foreground/50 mb-4">Oil Specifications</h3>
+                                <h3 className="font-semibold text-sm uppercase tracking-wide text-foreground/50 mb-4">{product.category === 'oils' ? 'Oil' : 'Product'} Specifications</h3>
                                 <ul className="space-y-3">
                                     <li className="flex justify-between items-center py-2 border-b border-foreground/10">
                                         <span className="text-foreground/60 text-sm">Packaging</span>
