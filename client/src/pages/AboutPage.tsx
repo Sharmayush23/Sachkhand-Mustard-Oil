@@ -50,9 +50,34 @@ const stagger = {
 export default function AboutPage() {
   return (
     <div className="pt-20">
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h1 className="font-heading text-4xl sm:text-6xl font-bold tracking-tight">
+                About <span className="text-primary">Sachkhand</span>
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                With a legacy of over 45 years, Sachkhand has been at the forefront of providing pure, high-quality mustard oil to families across the region. Our commitment to traditional methods combined with modern quality control ensures that every drop of our oil is as pure as nature intended.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="aspect-square rounded-full bg-primary/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] blur-3xl" />
+              <img
+                src={sachkhandBottleHero}
+                alt="Sachkhand Mustard Oil"
+                className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl"
+              />
             </motion.div>
           </div>
         </div>

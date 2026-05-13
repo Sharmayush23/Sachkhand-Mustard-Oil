@@ -11,6 +11,13 @@ const productLinks = [
   { label: "Cottonseed Cake", href: "/products" },
 ];
 
+const companyLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Facilities", href: "/facilities" },
+  { label: "Timeline", href: "/timeline" },
+  { label: "Contact Us", href: "/contact" },
+];
+
 
 const socialLinks = [
   { icon: SiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
