@@ -8,8 +8,6 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/products", label: "Our Products" },
-  { href: "/timeline", label: "Our Purity Journey" },
   { href: "/facilities", label: "Why Choose Us" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -114,11 +112,11 @@ export default function Navbar() {
 
           <div className="hidden md:block">
             <div className="flex flex-col items-end text-xs font-medium text-foreground/60 leading-tight">
-              <a href="tel:+919814144368" className="hover:text-primary transition-colors" data-testid="link-phone-header">
-                +91 9814144368
+              <a href="tel:+919417858885" className="hover:text-primary transition-colors" data-testid="link-phone-header">
+                +91 9417858885 / +91 9888565548
               </a>
-              <a href="mailto:info@sachkhandmustardoil.com" className="hover:text-secondary transition-colors" data-testid="link-email-header">
-                info@sachkhandmustardoil.com
+              <a href="mailto:Amarnath_vinodkumar@yahoo.com" className="hover:text-secondary transition-colors" data-testid="link-email-header">
+                Amarnath_vinodkumar@yahoo.com
               </a>
             </div>
           </div>
@@ -154,11 +152,11 @@ export default function Navbar() {
             ))}
             <div className="pt-4">
               <div className="flex flex-col gap-2 pt-2 border-t border-border mt-2">
-                <a href="tel:+919814144368" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors text-center py-2" data-testid="link-phone-mobile">
-                  +91 9814144368
+                <a href="tel:+919417858885" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors text-center py-2" data-testid="link-phone-mobile">
+                  +91 9417858885 / +91 9888565548
                 </a>
-                <a href="mailto:info@sachkhandmustardoil.com" className="text-sm font-medium text-foreground/80 hover:text-secondary transition-colors text-center py-2" data-testid="link-email-mobile">
-                  info@sachkhandmustardoil.com
+                <a href="mailto:Amarnath_vinodkumar@yahoo.com" className="text-sm font-medium text-foreground/80 hover:text-secondary transition-colors text-center py-2" data-testid="link-email-mobile">
+                  Amarnath_vinodkumar@yahoo.com
                 </a>
               </div>
             </div>

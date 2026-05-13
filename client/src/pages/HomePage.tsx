@@ -11,7 +11,7 @@ const stats = [
   { value: "45+", label: "Years", description: "Legacy of Purity" },
   { value: "10k+", label: "Families", description: "Trusted Daily" },
   { value: "100%", label: "Pure", description: "Chemical Free" },
-  { value: "#1", label: "Choice", description: "In Khanna" },
+  { value: "Purity", label: "First", description: "For Your Health" },
 ];
 
 const landingProducts = allProducts.map(p => ({
@@ -63,8 +63,6 @@ const stagger = {
 export default function HomePage() {
   return (
     <div className="pt-20">
-      <HeroCarousel />
-      
       {/* Stats Section */}
       <section className="py-12 bg-slate-50 border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cpu, Cog, Users, Target, TrendingUp, Clock, CheckCircle, Shield } from "lucide-react";
+import { Cpu, Cog, Target, TrendingUp, Clock, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const facilities = [
@@ -11,7 +11,7 @@ const facilities = [
   {
     icon: Cog,
     title: "Kachi Ghani Extraction",
-    description: "Our traditional cold-pressing units are optimized for purity and nutrient retention, producing liters of healthy oil every hour.",
+    description: "We use the ancient (Kachi Ghani) method to extract oil, ensuring all nutrients stay intact.",
   },
   {
     icon: Shield,
@@ -35,28 +35,6 @@ const facilities = [
   },
 ];
 
-const capabilities = [
-  {
-    icon: CheckCircle,
-    title: "Quality Certified",
-    description: "Our extraction unit operates under strict quality management systems, ensuring national food safety standards are met consistently.",
-  },
-  {
-    icon: Shield,
-    title: "Purity Guarantee",
-    description: "We provide a 100% purity guarantee on every bottle, ensuring our oil is free from any chemicals or preservatives.",
-  },
-  {
-    icon: Cog,
-    title: "Traditional Methods",
-    description: "We stick to the ancient Kachi Ghani method to preserve the authentic pungent taste and health benefits of mustard oil.",
-  },
-  {
-    icon: Users,
-    title: "Trusted Regionally",
-    description: "With a strong presence across Punjab, we are a leading provider of pure mustard oil to healthy Indian kitchens.",
-  },
-];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -75,53 +53,6 @@ const stagger = {
 export default function FacilitiesPage() {
   return (
     <div className="pt-20">
-      <section className="relative min-h-[60vh] flex items-center bg-slate-50 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
-        
-        {/* Subtle Brand Gradients */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="space-y-6"
-          >
-            <p className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold uppercase tracking-widest text-xs mb-2">
-              Our Extraction Excellence
-            </p>
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight">
-              Honoring <span className="text-primary italic">Purity</span>, <br />
-              Preserving Tradition
-            </h1>
-            <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
-              Step into our world of traditional excellence. Where ancient Kachi Ghani wisdom meets modern hygiene to deliver 100% pure mustard oil for your home.
-            </p>
-            <div className="pt-8">
-              <div className="inline-flex items-center gap-4 text-sm font-medium text-foreground/60 p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm">
-                <div className="flex items-center gap-2 border-r border-border pr-4">
-                  <CheckCircle className="h-4 w-4 text-accent" />
-                  <span>ISO Certified</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-primary" />
-                  <span>Purity Guaranteed</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <section className="py-24 bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -left-20 top-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
@@ -182,50 +113,6 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/20 border-y">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="text-center mb-20"
-          >
-            <motion.p
-              variants={fadeInUp}
-              className="text-primary font-bold uppercase tracking-widest text-xs mb-4"
-            >
-              Why Families Choose Sachkhand
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {capabilities.map((capability) => (
-              <motion.div key={capability.title} variants={fadeInUp}>
-                <Card className="h-full border-0 bg-white/50 backdrop-blur-sm shadow-md hover:shadow-xl transition-all duration-300 text-center rounded-2xl">
-                  <CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mx-auto mb-6">
-                      <capability.icon className="h-7 w-7 text-primary" />
-                    </div>
-                    <h3 className="font-heading font-bold text-lg mb-3">
-                      {capability.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {capability.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       <section className="py-24 bg-background overflow-hidden relative">
         <div className="absolute -right-20 bottom-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -238,7 +125,7 @@ export default function FacilitiesPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: "Suman Rani", role: "Legacy Customer", quote: "Sachkhand oil has that authentic sharp pungency that we grew up with. It's the only oil I trust for my traditional pickles and curries." },
-              { name: "Dr. Anil Verma", role: "Health Advocate", quote: "As someone who prioritizes natural nutrition, I recommend Sachkhand for its cold-pressed purity. It's essential for a healthy Indian heart." },
+              { name: "Dr. Anil Verma", role: "Health Advocate", quote: "As someone who prioritizes natural nutrition, I recommend Sachkhand for its purity. It's essential for a healthy Indian heart." },
               { name: "Harish Kumar", role: "Restaurateur", quote: "We've tried many brands, but the consistency of Sachkhand is unmatched. It enhances the flavor of our signature snacks perfectly." }
             ].map((t) => (
               <Card key={t.name} className="border-0 shadow-xl bg-white dark:bg-zinc-900 rounded-3xl relative overflow-hidden group">

@@ -11,12 +11,6 @@ const productLinks = [
   { label: "Cottonseed Cake", href: "/products" },
 ];
 
-const companyLinks = [
-  { label: "About Our Story", href: "/about" },
-  { label: "Our Heritage", href: "/timeline" },
-  { label: "Why Choose Us", href: "/facilities" },
-  { label: "Purity Guarantee", href: "/about" },
-];
 
 const socialLinks = [
   { icon: SiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
@@ -38,7 +32,7 @@ export default function Footer() {
             </div>
 
             <p className="text-white/60 text-sm leading-relaxed">
-              Khanna's premier mustard oil brand, dedicated to purity and quality for over 45 years. Delivering the essence of health and tradition to your kitchen.
+              Premier mustard oil brand, dedicated to purity and quality for over 45 years. Delivering the essence of health and tradition to your kitchen.
             </p>
           </div>
 
@@ -81,22 +75,22 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:info@sachkhandmustardoil.com"
+                  href="mailto:Amarnath_vinodkumar@yahoo.com"
                   className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-sm"
                   data-testid="link-footer-email"
                 >
                   <Mail className="h-4 w-4 text-primary" />
-                  info@sachkhandmustardoil.com
+                  Amarnath_vinodkumar@yahoo.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+919814144368"
+                  href="tel:+919417858885"
                   className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-sm"
                   data-testid="link-footer-phone"
                 >
                   <Phone className="h-4 w-4 text-primary" />
-                  +91 9814144368
+                  +91 94178 58885 / +91 98885 65548
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/50 text-sm">

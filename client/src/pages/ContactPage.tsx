@@ -34,12 +34,12 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["info@sachkhandmustardoil.com", "support@sachkhandoil.com"],
+    details: ["Amarnath_vinodkumar@yahoo.com"],
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 9999P1628", "+91 98765 43210"],
+    details: ["+91 94178 58885", "+91 98885 65548"],
   },
   {
     icon: MapPin,
@@ -49,7 +49,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Monday - Saturday", "8:00 AM - 8:00 PM IST"],
+    details: ["Monday - Saturday: 9:00 AM - 8:00 PM", "Sunday: 9:00 AM - 1:00 PM"],
   },
 ];
 
@@ -101,35 +101,6 @@ export default function ContactPage() {
 
   return (
     <div className="pt-20">
-      <section className="relative min-h-[40vh] flex items-center bg-slate-50 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-accent font-semibold uppercase tracking-wider text-sm mb-4" data-testid="text-contact-subtitle">
-              Reach Out to Us
-            </p>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6" data-testid="text-contact-title">
-              Let's Talk Purity
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-contact-description">
-              Have questions about our Kachi Ghani oil or want to place a bulk order? Our team is here to help you bring health to your home.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">

@@ -80,7 +80,7 @@ export const products: Product[] = [
         gaugeRange: "13kg, 15kg",
         material: "",
         coating: "",
-        application: "Salad Dressing",
+        application: "Salad Dressing,Frying",
         image: cottonOilImg,
         theme: {
             primary: "0 84% 50%",         // Red Button #E51C23
