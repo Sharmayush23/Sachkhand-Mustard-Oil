@@ -65,10 +65,10 @@ export const products: Product[] = [
             primary: "45 100% 50%",       // Golden Button #FFB300 (High contrast on Red)
             secondary: "48 100% 45%",     // Mustard Yellow
             accent: "42 100% 50%",        // Golden Accent
-            bg: "0 72% 35%",             // Rich Red BG #9c1a1a
+            bg: "48 90% 94%",             // Light Mustard Yellow BG
             surface: "0 0% 100%",
-            textPrimary: "0 0% 100%",      // White Text
-            textSecondary: "0 0% 90%"     // Light Gray
+            textPrimary: "0 0% 15%",      // Dark Text
+            textSecondary: "0 0% 40%"     // Muted Text
         }
     },
     {
@@ -107,7 +107,7 @@ export const products: Product[] = [
             primary: "123 46% 34%",       // Green for health
             secondary: "45 100% 50%",     // Bright Yellow
             accent: "55 100% 60%",        // Light Accent
-            bg: "45 40% 96%",             // Cream BG #fcf7e9
+            bg: "48 90% 94%",             // Light Mustard Yellow BG
             surface: "0 0% 100%",
             textPrimary: "0 0% 15%",      // Darkened Text
             textSecondary: "0 0% 40%"     // Muted Text
