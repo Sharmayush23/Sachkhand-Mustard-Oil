@@ -28,14 +28,14 @@ export interface Product {
 // Helper to deduce category from name
 function deduceCategory(name: string): string {
     const n = name.toLowerCase();
-    if (n.includes("kachi") || n.includes("ghani") || n.includes("cold")) return "kachi-ghani";
+    if (n.includes("pure") || n.includes("natural")) return "pure-extraction";
     if (n.includes("hair") || n.includes("care")) return "hair-care";
     return "cooking-oil";
 }
 
 // Helper to deduce description
 function deduceDescription(name: string): string {
-    if (name.includes("Kachi") || name.includes("Ghani")) return "Traditionally cold-pressed mustard oil, high in natural antioxidants and sharp flavor.";
+    if (name.includes("Mustard")) return "Purely extracted mustard oil, high in natural antioxidants and sharp flavor.";
     if (name.includes("Hair")) return "Nutrient-rich mustard oil perfect for deep conditioning and scalp health.";
     return "100% pure mustard oil, ideal for daily Indian cooking and immunity boosting.";
 }
@@ -54,8 +54,8 @@ export const products: Product[] = [
         id: "mustard-oil",
         name: "Mustard Oil",
         category: "oils",
-        description: "Traditionally cold-pressed mustard oil that matches strict purity and health standards.",
-        features: ["100% Pure", "Cold Pressed", "No Chemicals", "Sharp Aroma"],
+        description: "Purely extracted mustard oil that matches strict purity and health standards.",
+        features: ["100% Pure", "Natural Extraction", "No Chemicals", "Sharp Aroma"],
         gaugeRange: "500ml, 1L, 2L, 5L",
         material: "Prime Mustard Seeds",
         coating: "None (Pure Oil)",
@@ -65,10 +65,10 @@ export const products: Product[] = [
             primary: "45 100% 50%",       // Golden Button #FFB300 (High contrast on Red)
             secondary: "48 100% 45%",     // Mustard Yellow
             accent: "42 100% 50%",        // Golden Accent
-            bg: "48 90% 94%",             // Light Mustard Yellow BG
+            bg: "0 72% 35%",             // Rich Red BG #9c1a1a
             surface: "0 0% 100%",
-            textPrimary: "0 0% 15%",      // Dark Text
-            textSecondary: "0 0% 40%"     // Muted Text
+            textPrimary: "0 0% 100%",      // White Text
+            textSecondary: "0 0% 90%"     // Light Gray
         }
     },
     {

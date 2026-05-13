@@ -16,7 +16,7 @@ export const timelineEvents: TimelineEvent[] = [
         id: "expansion",
         year: 1982,
         title: "Scaling Tradition",
-        description: "As the demand for our pure mustard oil grew, we expanded our facilities, integrating traditional Kachi Ghani extraction methods with modern quality standards. This ensured that every drop of Sachkhand oil met the highest purity benchmarks.",
+        description: "As the demand for our pure mustard oil grew, we expanded our facilities, integrating natural extraction techniques with modern quality standards. This ensured that every drop of Sachkhand oil met the highest purity benchmarks.",
     },
     {
         id: "global-trust",

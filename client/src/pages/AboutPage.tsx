@@ -13,8 +13,8 @@ const stats = [
 const values = [
   {
     icon: Zap,
-    title: "Pure Extraction",
-    description: "We use traditional Kachi Ghani techniques to produce mustard oil with unmatched purity, ensuring natural nutrients and authentic taste.",
+    title: "Natural Extraction",
+    description: "We use specialized extraction techniques to produce mustard oil with unmatched purity, ensuring natural nutrients and authentic taste.",
   },
   {
     icon: Shield,
@@ -121,7 +121,7 @@ export default function AboutPage() {
                     Our Mission
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our mission is to empower every kitchen through the production of high-purity, healthy mustard oil. We strive to maintain the highest standards of quality through continuous innovation while honoring traditional extraction methods.
+                    Our mission is to empower every kitchen through the production of high-purity, healthy mustard oil. We strive to maintain the highest standards of quality through continuous innovation while honoring our pure heritage.
                   </p>
                 </CardContent>
               </Card>

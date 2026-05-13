@@ -11,7 +11,7 @@ import { products } from "@/data/products";
 
 const categories = [
   { value: "all", label: "All Collections" },
-  { value: "kachi-ghani", label: "Kachi Ghani" },
+  { value: "pure-extraction", label: "Pure Extraction" },
   { value: "cooking", label: "Daily Cooking" },
   { value: "hair-care", label: "Hair & Skin Care" },
   { value: "preservation", label: "Preservation" },
@@ -89,8 +89,24 @@ export default function ProductsPage() {
       {/* Search Bar */}
       <section className="sticky top-20 z-40 bg-background/80 backdrop-blur-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">All Products</h2>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Category Filter */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category.value}
+                  onClick={() => setSelectedCategory(category.value)}
+                  className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                    selectedCategory === category.value
+                      ? "bg-primary text-white shadow-lg scale-105"
+                      : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+
             <div className="relative w-full md:w-80">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input

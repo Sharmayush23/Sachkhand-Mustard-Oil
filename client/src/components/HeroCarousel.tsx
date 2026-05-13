@@ -53,15 +53,15 @@ export function HeroCarousel() {
     <section className="relative w-full overflow-hidden bg-[#FFF8E1]">
       {/* 16:9 Aspect Ratio Container */}
       <div className="relative w-full aspect-video md:aspect-[16/9] max-w-[1920px] mx-auto">
-        <Carousel setApi={setApi} className="w-full h-full" opts={{ loop: true, duration: 40 }}>
-          <CarouselContent className="h-full ml-0">
+        <Carousel setApi={setApi} className="w-full h-full" opts={{ loop: true }}>
+          <CarouselContent className="ml-0">
             {slides.map((slide, index) => (
               <CarouselItem key={index} className="relative h-full w-full pl-0">
-                <div className="w-full h-full flex items-center justify-center overflow-hidden">
+                <div className="relative w-full aspect-video md:aspect-[16/9] flex items-center justify-center overflow-hidden">
                   <img
                     src={slide.bg}
                     alt={slide.alt}
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                 </div>

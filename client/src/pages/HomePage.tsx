@@ -26,8 +26,8 @@ const landingProducts = allProducts.map(p => ({
 const values = [
   {
     icon: Zap,
-    title: "Traditional Method",
-    description: "We use the ancient cold-pressing (Kachi Ghani) method to extract oil, ensuring all nutrients stay intact.",
+    title: "Traditional Extraction",
+    description: "We use our time-honored extraction method to produce mustard oil, ensuring all nutrients stay intact.",
   },
   {
     icon: Users,
@@ -63,6 +63,7 @@ const stagger = {
 export default function HomePage() {
   return (
     <div className="pt-20">
+      <HeroCarousel />
       {/* Stats Section */}
       <section className="py-12 bg-slate-50 border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

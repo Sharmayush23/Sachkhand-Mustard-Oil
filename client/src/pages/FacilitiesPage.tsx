@@ -10,8 +10,8 @@ const facilities = [
   },
   {
     icon: Cog,
-    title: "Kachi Ghani Extraction",
-    description: "We use the ancient (Kachi Ghani) method to extract oil, ensuring all nutrients stay intact.",
+    title: "Natural Extraction",
+    description: "We use our time-honored method to extract oil, ensuring all nutrients stay intact.",
   },
   {
     icon: Shield,
@@ -53,6 +53,53 @@ const stagger = {
 export default function FacilitiesPage() {
   return (
     <div className="pt-20">
+      <section className="relative min-h-[60vh] flex items-center bg-slate-50 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          />
+        </div>
+        
+        {/* Subtle Brand Gradients */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6"
+          >
+            <p className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold uppercase tracking-widest text-xs mb-2">
+              Our Extraction Excellence
+            </p>
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight">
+              Honoring <span className="text-primary italic">Purity</span>, <br />
+              Preserving Tradition
+            </h1>
+            <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
+              Step into our world of excellence. Where pure heritage wisdom meets modern hygiene to deliver 100% pure mustard oil for your home.
+            </p>
+            <div className="pt-8">
+              <div className="inline-flex items-center gap-4 text-sm font-medium text-foreground/60 p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm">
+                <div className="flex items-center gap-2 border-r border-border pr-4">
+                  <CheckCircle className="h-4 w-4 text-accent" />
+                  <span>ISO Certified</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-primary" />
+                  <span>Purity Guaranteed</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-24 bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -left-20 top-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
@@ -81,7 +128,7 @@ export default function FacilitiesPage() {
               variants={fadeInUp}
               className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed"
             >
-              From rigorous seed analysis to the final traditional Kachi Ghani extraction, we ensure purity is never compromised at any stage of production.
+              From rigorous seed analysis to the final natural extraction process, we ensure purity is never compromised at any stage of production.
             </motion.p>
           </motion.div>
 
@@ -157,7 +204,7 @@ export default function FacilitiesPage() {
           </div>
           <div className="space-y-6">
             {[
-              { q: "What makes Sachkhand oil different?", a: "Our traditional Kachi Ghani extraction and rigorous purity testing ensure that Sachkhand oil is more flavorful and healthier than standard refined options." },
+              { q: "What makes Sachkhand oil different?", a: "Our specialized natural extraction and rigorous purity testing ensure that Sachkhand oil is more flavorful and healthier than standard refined options." },
               { q: "How do you ensure quality control?", a: "We use laboratory testing and automated hygienic bottling to ensure every single bottle meets our zero-adulteration policy." }
             ].map((item, i) => (
               <div key={i} className="bg-background rounded-xl p-6 shadow-sm border">
