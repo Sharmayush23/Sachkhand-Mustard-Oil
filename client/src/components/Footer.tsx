@@ -29,8 +29,8 @@ export default function Footer() {
   return (
     <footer className="bg-secondary text-white border-t border-white/5" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-center md:text-left">
+          <div className="space-y-6 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3">
               <img src={logo} alt="Sachkhand Logo" className="h-12 w-auto" />
               <h3 className="font-heading text-2xl font-bold text-white">
@@ -38,12 +38,12 @@ export default function Footer() {
               </h3>
             </div>
 
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Premier mustard oil brand, dedicated to purity and quality for over 45 years. Delivering the essence of health and tradition to your kitchen.
             </p>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-heading font-semibold text-primary mb-6 uppercase tracking-wider text-xs">Products</h4>
             <ul className="space-y-3">
               {productLinks.map((link) => (
@@ -60,27 +60,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-heading font-semibold text-primary mb-6 uppercase tracking-wider text-xs">Company</h4>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-white/50 hover:text-primary transition-colors text-sm"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(/\s/g, "-")}`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-heading font-semibold text-primary mb-6 uppercase tracking-wider text-xs">Contact</h4>
             <ul className="space-y-4">
-              <li>
+              <li className="flex justify-center md:justify-start">
                 <a
                   href="mailto:Amarnath_vinodkumar@yahoo.com"
                   className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-sm"
@@ -90,7 +73,7 @@ export default function Footer() {
                   Amarnath_vinodkumar@yahoo.com
                 </a>
               </li>
-              <li>
+              <li className="flex justify-center md:justify-start">
                 <a
                   href="tel:+919417858885"
                   className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-sm"
@@ -100,9 +83,9 @@ export default function Footer() {
                   +91 94178 58885 / +91 98885 65548
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/50 text-sm">
+              <li className="flex items-start gap-3 text-white/50 text-sm justify-center md:justify-start">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>
+                <span className="text-center md:text-left">
                   Paali Nagar, Guru Nanak Nagar<br />
                   Opposite Smart Store, Amloh Road<br />
                   Khanna - 141401, Punjab
@@ -110,18 +93,18 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-8 justify-center md:justify-start">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm border border-white/10"
+                  className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm border border-white/10 hover:scale-110"
                   aria-label={social.label}
                   data-testid={`link-social-${social.label.toLowerCase()}`}
                 >
-                  <social.icon className="h-4 w-4" />
+                  <social.icon className="h-5 w-5" />
                 </a>
               ))}
             </div>
