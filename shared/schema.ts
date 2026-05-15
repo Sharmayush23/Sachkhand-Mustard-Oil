@@ -1,60 +1,56 @@
-import { pgTable, text, varchar, integer, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const products = pgTable("products", {
-  id: varchar("id", { length: 255 }).primaryKey(),
-  name: text("name").notNull(),
-  category: text("category").notNull(),
-  description: text("description").notNull(),
-  features: text("features").array().notNull(),
-  gaugeRange: text("gauge_range"),
-  material: text("material"),
-  coating: text("coating"),
-  application: text("application"),
-  badge: text("badge"),
-  image: text("image"),
-});
+// ── Product ──────────────────────────────────────────────────────────────────
 
-export const timelineEvents = pgTable("timeline_events", {
-  id: varchar("id", { length: 255 }).primaryKey(),
-  year: integer("year").notNull(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
+export const insertProductSchema = z.object({
+  name: z.string(),
+  category: z.string(),
+  description: z.string(),
+  features: z.array(z.string()),
+  gaugeRange: z.string().optional().nullable(),
+  material: z.string().optional().nullable(),
+  coating: z.string().optional().nullable(),
+  application: z.string().optional().nullable(),
+  badge: z.string().optional().nullable(),
+  image: z.string().optional().nullable(),
 });
-
-export const contactInquiries = pgTable("contact_inquiries", {
-  id: varchar("id", { length: 255 }).primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  subject: text("subject").notNull(),
-  message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
-});
-
-export const insertProductSchema = createInsertSchema(products).omit({ id: true });
-export const insertTimelineEventSchema = createInsertSchema(timelineEvents).omit({ id: true });
-export const insertContactInquirySchema = createInsertSchema(contactInquiries).omit({ id: true, createdAt: true });
 
 export type InsertProduct = z.infer<typeof insertProductSchema>;
-export type Product = typeof products.$inferSelect;
+export type Product = InsertProduct & { id: string };
 
-export type InsertTimelineEvent = z.infer<typeof insertTimelineEventSchema>;
-export type TimelineEvent = typeof timelineEvents.$inferSelect;
+// ── Timeline Event ────────────────────────────────────────────────────────────
 
-export type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
-export type ContactInquiry = typeof contactInquiries.$inferSelect;
-
-export const users = pgTable("users", {
-  id: varchar("id", { length: 255 }).primaryKey(),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+export const insertTimelineEventSchema = z.object({
+  year: z.number().int(),
+  title: z.string(),
+  description: z.string(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+export type InsertTimelineEvent = z.infer<typeof insertTimelineEventSchema>;
+export type TimelineEvent = InsertTimelineEvent & { id: string };
+
+// ── Contact Inquiry ───────────────────────────────────────────────────────────
+
+export const insertContactInquirySchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(1, "Message is required"),
+});
+
+export type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
+export type ContactInquiry = InsertContactInquiry & {
+  id: string;
+  createdAt: Date | null;
+};
+
+// ── User ─────────────────────────────────────────────────────────────────────
+
+export const insertUserSchema = z.object({
+  username: z.string(),
+  password: z.string(),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type User = InsertUser & { id: string };
+

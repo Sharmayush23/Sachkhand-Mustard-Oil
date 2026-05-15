@@ -243,7 +243,7 @@ export default function ContactPage() {
                             "Sending..."
                           ) : (
                             <>
-                              Send Message
+                              Send to WhatsApp
                               <Send className="h-4 w-4" />
                             </>
                           )}
@@ -285,22 +285,7 @@ export default function ContactPage() {
                         </div>
                       </div>
                     ))}
-                    <div className="flex gap-4 pt-4">
-                      <Button
-                        variant="cta"
-                        className="w-full gap-2 h-12 font-bold shadow-lg"
-                        onClick={() => {
-                          const data = form.getValues();
-                          if (data.name && data.message) {
-                            handleWhatsAppRedirect(data);
-                          } else {
-                            window.open("https://wa.me/919417858885", "_blank");
-                          }
-                        }}
-                      >
-                        Chat on WhatsApp
-                      </Button>
-                    </div>
+
                   </div>
 
                   <div className="mt-12 pt-8 border-t border-border">
