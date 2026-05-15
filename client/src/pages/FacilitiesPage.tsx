@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cpu, Cog, Target, TrendingUp, Clock, Shield } from "lucide-react";
+import { Cpu, Cog, Target, TrendingUp, Clock, Shield, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const facilities = [

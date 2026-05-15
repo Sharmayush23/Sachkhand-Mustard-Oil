@@ -3,7 +3,7 @@ import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
 export const products = pgTable("products", {
-  id: varchar("id").primaryKey(),
+  id: varchar("id", { length: 255 }).primaryKey(),
   name: text("name").notNull(),
   category: text("category").notNull(),
   description: text("description").notNull(),
@@ -17,14 +17,14 @@ export const products = pgTable("products", {
 });
 
 export const timelineEvents = pgTable("timeline_events", {
-  id: varchar("id").primaryKey(),
+  id: varchar("id", { length: 255 }).primaryKey(),
   year: integer("year").notNull(),
   title: text("title").notNull(),
   description: text("description").notNull(),
 });
 
 export const contactInquiries = pgTable("contact_inquiries", {
-  id: varchar("id").primaryKey(),
+  id: varchar("id", { length: 255 }).primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull(),
   subject: text("subject").notNull(),
@@ -46,7 +46,7 @@ export type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
 export type ContactInquiry = typeof contactInquiries.$inferSelect;
 
 export const users = pgTable("users", {
-  id: varchar("id").primaryKey(),
+  id: varchar("id", { length: 255 }).primaryKey(),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
 });

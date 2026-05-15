@@ -63,19 +63,20 @@ app.use((req, res, next) => {
 // Export app for Vercel
 export default app;
 
+// Global error handler
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+
+  log(`Error ${status}: ${message}`);
+  res.status(status).json({ message });
+});
+
 // Only start server if running directly
 const __filename = fileURLToPath(import.meta.url);
 if (__filename === process.argv[1]) {
   (async () => {
     await registerRoutes(httpServer, app);
-
-    app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-      const status = err.status || err.statusCode || 500;
-      const message = err.message || "Internal Server Error";
-
-      res.status(status).json({ message });
-      throw err;
-    });
 
     if (process.env.NODE_ENV === "production") {
       serveStatic(app);
@@ -95,6 +96,4 @@ if (__filename === process.argv[1]) {
       },
     );
   })();
-} else {
-  // logic handled in api/index.ts for Vercel
 }

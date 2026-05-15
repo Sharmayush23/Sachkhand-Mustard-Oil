@@ -78,18 +78,22 @@ export default function ContactPage() {
       const response = await apiRequest("POST", "/api/contact", data);
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (_, variables) => {
       setIsSubmitted(true);
       form.reset();
       toast({
         title: "Message Sent!",
         description: "We'll get back to you within 24 hours.",
       });
+      // Redirect to WhatsApp after a short delay
+      setTimeout(() => {
+        handleWhatsAppRedirect(variables);
+      }, 1500);
     },
-    onError: () => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: error.message || "Failed to send message. Please try again.",
         variant: "destructive",
       });
     },
@@ -97,6 +101,12 @@ export default function ContactPage() {
 
   const onSubmit = (data: ContactFormData) => {
     contactMutation.mutate(data);
+  };
+
+  const handleWhatsAppRedirect = (data: ContactFormData) => {
+    const phoneNumber = "919417858885";
+    const message = `*New Inquiry from Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Subject:* ${data.subject}%0A*Message:* ${data.message}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
   return (
@@ -275,6 +285,22 @@ export default function ContactPage() {
                         </div>
                       </div>
                     ))}
+                    <div className="flex gap-4 pt-4">
+                      <Button
+                        variant="cta"
+                        className="w-full gap-2 h-12 font-bold shadow-lg"
+                        onClick={() => {
+                          const data = form.getValues();
+                          if (data.name && data.message) {
+                            handleWhatsAppRedirect(data);
+                          } else {
+                            window.open("https://wa.me/919417858885", "_blank");
+                          }
+                        }}
+                      >
+                        Chat on WhatsApp
+                      </Button>
+                    </div>
                   </div>
 
                   <div className="mt-12 pt-8 border-t border-border">
