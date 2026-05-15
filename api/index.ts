@@ -1,16 +1,19 @@
 import app from '../server/index';
+import { Server } from 'http';
 import { registerRoutes } from '../server/routes';
-import { createServer } from 'http';
+import serverless from 'serverless-http';
 
-// Create a server instance for route registration compatibility
-const server = createServer(app);
 let routesRegistered = false;
+
+// We need a mock server object for registerRoutes, but we won't use it for listening
+const mockServer = {} as Server;
+
+const handler = serverless(app);
 
 export default async (req: any, res: any) => {
     if (!routesRegistered) {
-        await registerRoutes(server, app);
+        await registerRoutes(mockServer, app);
         routesRegistered = true;
     }
-    // Forward request to Express app
-    app(req, res);
+    return handler(req, res);
 };
