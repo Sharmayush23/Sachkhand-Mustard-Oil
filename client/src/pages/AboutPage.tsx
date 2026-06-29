@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Target, Eye, Shield, Zap, HeartHandshake, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import sachkhandBottleHero from "@/assets/products/sachkhand_bottle_hero.png";
+import sachkhandBottleHero from "@/assets/products/sachkhand_bottle_hero.webp";
 
 const stats = [
   { value: "45+", label: "Years", description: "Legacy of Purity" },
@@ -77,6 +77,7 @@ export default function AboutPage() {
                 src={sachkhandBottleHero}
                 alt="Sachkhand Mustard Oil"
                 className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl"
+                loading="lazy"
               />
             </motion.div>
           </div>

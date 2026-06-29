@@ -57,6 +57,7 @@ export function ProductCard({ product, className, layout }: ProductCardProps) {
                   src={image}
                   alt={name}
                   className="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center relative z-10">

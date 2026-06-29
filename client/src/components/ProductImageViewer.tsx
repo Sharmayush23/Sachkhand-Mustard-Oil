@@ -154,6 +154,7 @@ export default function ProductImageViewer({
                   alt={`${productName} view ${i + 1}`}
                   className="w-full h-full object-contain p-1.5"
                   draggable={false}
+                  loading="lazy"
                 />
               </button>
             ))}

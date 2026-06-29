@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { products as allProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { LazySection } from "@/hooks/useIntersectionObserver";
 
 const stats = [
   { value: "45+", label: "Years", description: "Legacy of Purity" },
@@ -65,32 +66,29 @@ export default function HomePage() {
     <div className="pt-20">
       <HeroCarousel />
       {/* Stats Section */}
-      <section className="py-12 bg-slate-50 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-primary mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                  {stat.label}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  {stat.description}
-                </div>
-              </motion.div>
-            ))}
+      <LazySection>
+        <section className="py-12 bg-slate-50 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <LazySection key={stat.label} delay={index * 80}>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-primary mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm font-semibold text-foreground uppercase tracking-wider">
+                      {stat.label}
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {stat.description}
+                    </div>
+                  </div>
+                </LazySection>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </LazySection>
 
 
       <section className="py-20 bg-background">

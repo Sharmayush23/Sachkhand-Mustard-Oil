@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
+import { LazySection } from "@/hooks/useIntersectionObserver";
 
 const categories = [
   { value: "all", label: "All Collections" },
@@ -86,28 +87,12 @@ export default function ProductsPage() {
         </div>
       </section>
 
+
       {/* Search Bar */}
       <section className="sticky top-20 z-40 bg-background/80 backdrop-blur-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Category Filter */}
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.value}
-                  onClick={() => setSelectedCategory(category.value)}
-                  className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
-                    selectedCategory === category.value
-                      ? "bg-primary text-white shadow-lg scale-105"
-                      : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
-                  }`}
-                >
-                  {category.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="relative w-full md:w-80">
+          <div className="flex items-center justify-center">
+            <div className="relative w-full md:w-96">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search products..."
@@ -120,46 +105,49 @@ export default function ProductsPage() {
         </div>
       </section>
 
+
       {/* Product Grid */}
-      <section className="py-12 bg-muted/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatePresence mode="wait">
-            {filteredProducts.length > 0 ? (
-              <motion.div
-                key={selectedCategory}
-                variants={stagger}
-                initial="initial"
-                animate="animate"
-                exit={{ opacity: 0 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-              >
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} layout />
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-32"
-              >
-                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="h-8 w-8 text-muted-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">No products found</h3>
-                <p className="text-muted-foreground">Try adjusting your filters or search terms.</p>
-                <Button
-                  variant="outline"
-                  className="mt-6"
-                  onClick={() => { setSelectedCategory("all"); setSearchQuery(""); }}
+      <LazySection>
+        <section className="py-12 bg-muted/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatePresence mode="wait">
+              {filteredProducts.length > 0 ? (
+                <motion.div
+                  key={selectedCategory}
+                  variants={stagger}
+                  initial="initial"
+                  animate="animate"
+                  exit={{ opacity: 0 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
                 >
-                  Clear all filters
-                </Button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </section>
+                  {filteredProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} layout />
+                  ))}
+                </motion.div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-32"
+                >
+                  <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Search className="h-8 w-8 text-muted-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">No products found</h3>
+                  <p className="text-muted-foreground">Try adjusting your filters or search terms.</p>
+                  <Button
+                    variant="outline"
+                    className="mt-6"
+                    onClick={() => { setSelectedCategory("all"); setSearchQuery(""); }}
+                  >
+                    Clear all filters
+                  </Button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </section>
+      </LazySection>
 
       {/* Call to Action */}
       <section className="py-20 bg-primary/5 border-t">

@@ -42,11 +42,11 @@ function deduceDescription(name: string): string {
 
 // Automatically import all images from the assets/products directory
 // Use absolute path from Vite root (client directory)
-import mustardOilImg from "@/assets/products/final-images/mustard-oil.png";
-import cottonOilImg from "@/assets/products/final-images/cotton-seed-refined-oil.png";
-import mustardCakeImg from "@/assets/products/final-images/sunflower-oil.png";
-import cottonseedCakeImg from "@/assets/products/final-images/cotton-seed-cake.jpeg";
-import cattleFeedImg from "@/assets/products/final-images/cattle-feed.png";
+import mustardOilImg from "@/assets/products/final-images/mustard-oil.webp";
+import cottonOilImg from "@/assets/products/final-images/cotton-seed-refined-oil.webp";
+import mustardCakeImg from "@/assets/products/final-images/sunflower-oil.webp";
+import cottonseedCakeImg from "@/assets/products/final-images/cotton-seed-cake.webp";
+import cattleFeedImg from "@/assets/products/final-images/cattle-feed.webp";
 
 // Hardcoded Sachkhand Products
 export const products: Product[] = [
@@ -65,7 +65,7 @@ export const products: Product[] = [
             primary: "45 100% 50%",       // Golden Button #FFB300 (High contrast on Red)
             secondary: "48 100% 45%",     // Mustard Yellow
             accent: "42 100% 50%",        // Golden Accent
-            bg: "0 72% 35%",             // Rich Red BG #9c1a1a
+            bg: "2 63% 48%",             // Rich Red BG #9c1a1a
             surface: "0 0% 100%",
             textPrimary: "0 0% 100%",      // White Text
             textSecondary: "0 0% 90%"     // Light Gray
@@ -86,7 +86,7 @@ export const products: Product[] = [
             primary: "0 84% 50%",         // Red Button #E51C23
             secondary: "0 66% 47%",       // Primary Red
             accent: "0 0% 98%",           // Accent
-            bg: "220 60% 20%",            // Deep Blue BG #14213d
+            bg: "208 70%  42%",            // Deep Blue BG #14213d
             surface: "0 0% 100%",
             textPrimary: "0 0% 100%",      // White Text
             textSecondary: "0 0% 90%"     // Light Gray

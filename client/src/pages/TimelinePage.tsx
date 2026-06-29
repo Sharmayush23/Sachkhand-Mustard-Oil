@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { Calendar, Award, Globe, Factory, CheckCircle, Zap, Users, Building } from "lucide-react";
 import { timelineEvents } from "@/data/timeline";
-import sachkhandBottleHero from "@/assets/products/sachkhand_bottle_hero.png";
+import sachkhandBottleHero from "@/assets/products/sachkhand_bottle_hero.webp";
 
 const iconMap: Record<number, typeof Building> = {
   1968: Building,
@@ -71,6 +71,7 @@ export default function TimelinePage() {
                   src={sachkhandBottleHero}
                   alt="Pure Purity at Sachkhand"
                   className="relative w-full max-w-md mx-auto rounded-xl shadow-2xl"
+                  loading="lazy"
                   data-testid="img-founder-timeline"
                 />
                 <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md rounded-lg p-3 border border-white/10 shadow-xl max-w-[180px]">

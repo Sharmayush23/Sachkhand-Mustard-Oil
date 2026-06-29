@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiX } from "react-icons/si";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const productLinks = [
   { label: "Mustard Oil", href: "/products" },
@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-6 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Sachkhand Logo" className="h-12 w-auto" />
+              <img src={logo} alt="Sachkhand Logo" className="h-12 w-auto" loading="lazy" />
               <h3 className="font-heading text-2xl font-bold text-white">
                 Sachkhand
               </h3>

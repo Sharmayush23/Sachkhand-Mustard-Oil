@@ -6,11 +6,11 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-import img1 from "@/assets/sachkhand/1.png";
-import img2 from "@/assets/sachkhand/2.png";
-import img3 from "@/assets/sachkhand/3.png";
-import img4 from "@/assets/sachkhand/4.png";
-import img5 from "@/assets/sachkhand/5.png";
+import img1 from "@/assets/sachkhand/1.webp";
+import img2 from "@/assets/sachkhand/2.webp";
+import img3 from "@/assets/sachkhand/3.webp";
+import img4 from "@/assets/sachkhand/4.webp";
+import img5 from "@/assets/sachkhand/5.webp";
 
 const slides = [
   { bg: img1, alt: "Sachkhand Slide 1" },

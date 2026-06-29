@@ -195,7 +195,7 @@ export default function ProductDetailPage() {
                                                 <CardContent className="p-4 flex gap-4 items-center h-full">
                                                     <div className="h-20 w-20 bg-foreground/10 rounded-lg flex items-center justify-center shrink-0">
                                                         {p.image ? (
-                                                            <img src={p.image} className="w-full h-full object-contain p-2" alt={p.name} />
+                                                            <img src={p.image} className="w-full h-full object-contain p-2" alt={p.name} loading="lazy" />
                                                         ) : (
                                                             <CheckCircle className="h-8 w-8 text-foreground/20" />
                                                         )}
