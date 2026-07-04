@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Forward /api/contact request to the contact.php script
+  RewriteRule ^api/contact$ api/contact.php [L,QSA]
+  
+  # For all other paths, if they do not point to an existing file/directory, route to index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

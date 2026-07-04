@@ -27,9 +27,11 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white border-t border-white/5" data-testid="footer">
+    <footer className="bg-secondary text-white border-t-2 border-primary/60" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left">
+
+          {/* Col 1 — Brand */}
           <div className="space-y-6 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3">
               <img src={logo} alt="Sachkhand Logo" className="h-12 w-auto" loading="lazy" />
@@ -37,12 +39,12 @@ export default function Footer() {
                 Sachkhand
               </h3>
             </div>
-
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Premier mustard oil brand, dedicated to purity and quality for over 45 years. Delivering the essence of health and tradition to your kitchen.
             </p>
           </div>
 
+          {/* Col 2 — Products */}
           <div className="flex flex-col items-center md:items-start">
             <h4 className="font-heading font-semibold text-primary mb-6 uppercase tracking-wider text-xs">Products</h4>
             <ul className="space-y-3">
@@ -60,6 +62,25 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Col 3 — Company */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="font-heading font-semibold text-primary mb-6 uppercase tracking-wider text-xs">Company</h4>
+            <ul className="space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/50 hover:text-primary transition-colors text-sm"
+                    data-testid={`link-footer-company-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4 — Contact */}
           <div className="flex flex-col items-center md:items-start">
             <h4 className="font-heading font-semibold text-primary mb-6 uppercase tracking-wider text-xs">Contact</h4>
             <ul className="space-y-4">
@@ -69,7 +90,7 @@ export default function Footer() {
                   className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-sm"
                   data-testid="link-footer-email"
                 >
-                  <Mail className="h-4 w-4 text-primary" />
+                  <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                   Amarnath_vinodkumar@yahoo.com
                 </a>
               </li>
@@ -79,7 +100,7 @@ export default function Footer() {
                   className="flex items-center gap-3 text-white/50 hover:text-primary transition-colors text-sm"
                   data-testid="link-footer-phone"
                 >
-                  <Phone className="h-4 w-4 text-primary" />
+                  <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                   +91 94178 58885 / +91 98885 65548
                 </a>
               </li>
@@ -109,6 +130,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
+
         </div>
 
         <div className="border-t border-white/5 mt-12 pt-8 text-center">

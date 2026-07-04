@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { Calendar, Award, Globe, Factory, CheckCircle, Zap, Users, Building } from "lucide-react";
+import { Calendar, Award, Globe, Factory, CheckCircle, Zap, Users, Building, Target, Star } from "lucide-react";
 import { timelineEvents } from "@/data/timeline";
 import sachkhandBottleHero from "@/assets/products/sachkhand_bottle_hero.webp";
 
@@ -11,8 +11,11 @@ const iconMap: Record<number, typeof Building> = {
   1990: Award,
   1998: CheckCircle,
   2008: Globe,
+  2010: Target,
   2015: Zap,
+  2018: Star,
   2023: Users,
+  2024: Globe,
 };
 
 const fadeInUp = {

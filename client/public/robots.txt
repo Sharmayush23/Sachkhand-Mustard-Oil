@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block access to PHP scripts directory listing (no direct browsing)
+Disallow: /api/
+
+Sitemap: https://yourdomain.com/sitemap.xml
